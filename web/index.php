@@ -1,3 +1,4 @@
+<?php include'../data/front-end/index.php'; ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -29,38 +30,11 @@
 	<!--========================================================
 														HEADER 
 	=========================================================-->
-	<header id="header">
-		<div id="stuck_container">
-			<div class="container">
-				<div>
-					<h1 class="wow fadeInLeft">
-						<a href="index.html"><img src="images/logo.png" alt="John Keys"></a>
-					</h1>
-				</div>
-			</div>
-			<nav id="dc_gual">
-				<div class="container">
-					<ul class="sf-menu">
-						<li class="current"><a href="index.html">Inicio<strong></strong></a></li>
-						<li><a href="index-1.html">Habitaciones<strong></strong></a></li>
-						<li><a href="index-2.html">Galería<strong></strong></a>
-							<ul class="submenu">
-								<li><a href="#">Imagenes</a></li>
-								<li><a href="#">Videos</a></li>								
-							</ul>
-						</li>
-						<li><a href="index-3.html">P<strong></strong></a></li>
-						<li id="last-li"><a href="index-4.html">Contactos<strong></strong></a></li>
-					</ul>
-				</div>
-			</nav>
-		</div>
-	</header>
+	<?php print menu(); ?>
 	<!--========================================================
 														CONTENT 
 	=========================================================-->
-	<section id="content">        
-
+	<section id="content">
 		<!-- start Camera -->
 		<div class="camera_main_container  wow fadeIn">
 				<div class="slider_wrapper">
@@ -106,9 +80,9 @@
 						</ul>
 			
 						<ul class="camera_slogans">
-							<li><span class="slider_txt1 animated fadeInUp">MAKE YOUR VACATION <br>COMFORTABLE</span></li>
-							<li><span class="slider_txt1 animated fadeInUp">View our rooms, <br>restaurant, pool &amp; other</span></li>
-							<li><span class="slider_txt1 animated fadeInUp">Make a reservation <br>to get new experience!</span></li>
+							<li><span class="slider_txt1 animated fadeInUp">Haga de sus vacaciones <br> más confortables</span></li>
+							<li><span class="slider_txt1 animated fadeInUp">Vea nuestras habitaciones,<br> restaurante y más</span></li>
+							<li><span class="slider_txt1 animated fadeInUp">Hacer una reserva para <br> conseguir nuevas experiencias!</span></li>
 						</ul>
 					</div>
 		
@@ -116,9 +90,9 @@
 					<div class="grid_3 " >
 						<div class="banner1 vline">
 							<img src="images/page1_icon1.png" alt="" class="no_resize wow fadeInUp" data-wow-delay="1.2s">
-							<p class="txt1 wow fadeInUp" data-wow-delay="1.3s">SPECIAL PROMOTION:</p>
-							<p class="txt2 wow fadeInUp" data-wow-delay="1.4s">SEE THIS MONTH`S GETAWAY PACKAGES</p>
-							<a href="#" class="more_btn wow fadeInUp" data-wow-delay="1.5s">read more</a>
+							<p class="txt1 wow fadeInUp" data-wow-delay="1.3s">Promociones especiales:</p>
+							<p class="txt2 wow fadeInUp" data-wow-delay="1.4s">ver paquetes especiales de este mes</p>
+							<a href="#" class="more_btn wow fadeInUp" data-wow-delay="1.5s">Leer mas..</a>
 						</div>
 					</div>
 
@@ -144,9 +118,9 @@
 					<div class="grid_3 ">
 						<div class="banner1">
 							<img src="images/page1_icon4.png" alt="" class="no_resize wow fadeInUp" data-wow-delay="1.6s">
-							<p class="txt1 wow fadeInUp" data-wow-delay="1.7s">sign up for <br>our guestbook</p>
-							<p class="txt2 wow fadeInUp" data-wow-delay="1.8s">to receive special <br>promotions <br>by email</p>
-							<a href="#" class="more_btn wow fadeInUp" data-wow-delay="1.9s">read more</a>
+							<p class="txt1 wow fadeInUp" data-wow-delay="1.7s">Tax Free</p>
+							<p class="txt2 wow fadeInUp" data-wow-delay="1.8s">Servicio Libre de Impuestos</p>
+							<a href="#" class="more_btn wow fadeInUp" data-wow-delay="1.9s">Leer mas..</a>
 						</div>
 					</div>
 
@@ -172,7 +146,7 @@
 					<a href="#" class="banner2">
 						<img src="images/page1_pic1.jpg" alt="" class="img_round">
 						<div class="banner2_txt">
-							<p>book now!</p>
+							<p>reservar ahora!</p>
 						</div>
 					</a>
 					<p>Praesent vestibulum aenean nonummy hendrerit mauris. Cum sociis natoque penatibus et mgnis dis parturient montes ascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi nunc odio gravida at cursus nec luctus a lorem.</p>
@@ -186,7 +160,7 @@
 					<a href="#" class="banner2">
 						<img src="images/page1_pic2.jpg" alt="" class="img_round">
 						<div class="banner2_txt">
-							<p>book now!</p>
+							<p>reservar ahora!</p>
 						</div>
 					</a>
 					<p>Praesent vestibulum aenean nonummy hendrerit mauris. Cum sociis natoque penatibus et mgnis dis parturient montes ascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi nunc odio gravida at cursus nec luctus a lorem.</p>
@@ -200,7 +174,7 @@
 					<a href="#" class="banner2">
 						<img src="images/page1_pic3.jpg" alt="" class="img_round">
 						<div class="banner2_txt">
-							<p>book now!</p>
+							<p>reservar ahora!</p>
 						</div>
 					</a>
 					<p>Praesent vestibulum aenean nonummy hendrerit mauris. Cum sociis natoque penatibus et mgnis dis parturient montes ascetur ridiculus mus. Nulla dui. Fusce feugiat malesuada odio. Morbi nunc odio gravida at cursus nec luctus a lorem.</p>
@@ -218,19 +192,7 @@
 	<!--========================================================
 														FOOTER 
 	=========================================================-->
-	<footer id="footer">
-		<div class="container">
-			<div class="row">
-				<div class="grid_12">
-					<div class="wrapper  wow fadeInRight">
-						<h1><a href="index.html"><img src="images/logo_footer.png" alt="John Keys"></a> </h1>
-					</div>
-					<p class="txt_priv wow fadeInLeft">&copy; <span id="copyright-year"></span> | <a href="index-5.html">Politicas de Privacidad</a><br><!--{%FOOTER_LINK} --></p>
-
-				</div>
-			</div>
-		</div>
-	</footer>
+	<?php footer(); ?>
 
 
 
