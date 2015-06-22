@@ -25,6 +25,17 @@
 		<link rel="stylesheet" href="../dist/css/jquery.gritter.min.css" />
 		<link rel="stylesheet" href="../dist/css/chosen.min.css" />
 
+		
+		<link rel="stylesheet" href="../dist/css/datepicker.min.css" />
+		<link rel="stylesheet" href="../dist/css/bootstrap-timepicker.min.css" />
+		<link rel="stylesheet" href="../dist/css/daterangepicker.min.css" />
+		<link rel="stylesheet" href="../dist/css/bootstrap-datetimepicker.min.css" />
+		<link rel="stylesheet" href="../dist/css/colorpicker.min.css" />
+		<link rel="stylesheet" href="../dist/css/ui.jqgrid.min.css" />
+
+		<!-- ace styles -->
+		<link rel="stylesheet" href="../dist/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />		
+
 		<!--[if lte IE 9]>
 			<link rel="stylesheet" href="../dist/css/ace-part2.min.css" class="ace-main-stylesheet" />
 		<![endif]-->
@@ -44,6 +55,11 @@
 		<script src="../dist/js/html5shiv.min.js"></script>
 		<script src="../dist/js/respond.min.js"></script>
 		<![endif]-->
+		<style type="text/css">
+		.ui-widget {
+			z-index: 99999999999999999 !important;
+		}
+		</style>
 	</head>
 
 	<body class="no-skin">
@@ -156,21 +172,21 @@
 																</div>
 
 																<div class="form-group has-error">
-																	<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Usuario: </label>
+																	<label class="col-sm-3 control-label no-padding-right" for="txt_13"> Usuario: </label>
 																	<div class="col-sm-9">
 																		<input type="text" id="txt_13" name="txt_13" placeholder="Nombre de usuario" class="form-control" required pattern="[A-Za-záéíóúÁÉÍÓÚñÑ0-9]{1,}" data-toggle="tooltip" data-original-title="Nombres de usuario"  />
 																	</div>
 																</div>	
 
 																<div class="form-group has-error">
-																	<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> Password: </label>
+																	<label class="col-sm-3 control-label no-padding-right" for="txt_5"> Password: </label>
 																	<div class="col-sm-9">
 																		<input type="password" id="txt_5" name="txt_5" placeholder="Password" class="form-control" required pattern="[A-Za-záéíóúÁÉÍÓÚñÑ0-9]{6,}" data-toggle="tooltip" data-original-title="Digite la contraseña del usuario mínimo 5 carácteres"/>
 																	</div>
 																</div>
 
 																<div class="form-group">
-																	<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> Repetir: </label>
+																	<label class="col-sm-3 control-label no-padding-right" for="txt_6"> Repetir: </label>
 																	<div class="col-sm-9">
 																		<input type="password" id="txt_6" name="txt_6" placeholder="Repetir Password" class="form-control" data-toggle="tooltip" data-original-title="Repita la contraseña ingresada"/>
 																	</div>
@@ -179,7 +195,7 @@
 
 															<div class="col-sm-5">
 																<div class="form-group">
-																	<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> Celular: </label>																	
+																	<label class="col-sm-3 control-label no-padding-right" for="txt_7"> Celular: </label>																	
 																	<div class="col-sm-9">	
 																		<span class="block input-icon input-icon-right">
 																			<input type="text" id="txt_7" name="txt_7" placeholder="Celular" class="form-control" onkeydown="return validarNumeros(event)" />
@@ -189,7 +205,7 @@
 																</div>
 
 																<div class="form-group">
-																	<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> Correo: </label>
+																	<label class="col-sm-3 control-label no-padding-right" for="txt_8"> Correo: </label>
 																	<div class="col-sm-9">
 																	  <span class="block input-icon input-icon-right">
 																	  	<input type="mail" id="txt_8" name="txt_8" placeholder="Correo" class="form-control" />
@@ -199,15 +215,15 @@
 																</div>
 
 																<div class="form-group">
-																	<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> Cargo: </label>
-																	<div class="col-sm-9">
-																		<select class="chosen-select form-control" id="txt_4" name="txt_4" data-placeholder="Pais">																			
-																		</select>
+																	<label class="col-sm-3 control-label no-padding-right" for="txt_4"> Cargo: </label>
+																	<div class="col-sm-9">																		
+																		<select class="chosen-select form-control" id="txt_4" name="txt_4" data-placeholder="">
+																		</select>																			
 																	</div>
 																</div>	
 
 																<div class="form-group">
-																	<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> País: </label>
+																	<label class="col-sm-3 control-label no-padding-right" for="txt_9"> País: </label>
 																	<div class="col-sm-9">
 																		<select class="chosen-select form-control" id="txt_9" name="txt_9" data-placeholder="País">
 																		</select>																	
@@ -215,7 +231,7 @@
 																</div>
 
 																<div class="form-group">
-																	<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> Provincia: </label>
+																	<label class="col-sm-3 control-label no-padding-right" for="txt_10"> Provincia: </label>
 																	<div class="col-sm-9">
 																		<select class="chosen-select form-control" id="txt_10" name="txt_10" data-placeholder="Provincia">
 																		</select>
@@ -223,7 +239,7 @@
 																</div>
 
 																<div class="form-group">
-																	<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> Ciudad: </label>
+																	<label class="col-sm-3 control-label no-padding-right" for="txt_11"> Ciudad: </label>
 																	<div class="col-sm-9">
 																		<select class="chosen-select form-control" id="txt_11" name="txt_11" data-placeholder="Ciudad" >
 																		</select>
@@ -231,7 +247,7 @@
 																</div>
 
 																<div class="form-group has-error">
-																	<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> Dirección: </label>
+																	<label class="col-sm-3 control-label no-padding-right" for="txt_12"> Dirección: </label>
 																	<div class="col-sm-9">
 																		<input type="text" id="txt_12" name="txt_12" placeholder="Dirección" class="form-control"  required pattern="[A-Za-záéíóúÁÉÍÓÚñÑ0-9]{1,}" data-toggle="tooltip" data-original-title="Ingrese la dirección del usuario a crear" />
 																	</div>
@@ -277,7 +293,25 @@
 					</div><!-- /.page-content -->
 				</div>
 			</div><!-- /.main-content -->
-
+			
+			 <!-- Modal -->
+		  	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		    <div class="modal-dialog">
+		      <div class="modal-content">
+		        <div class="modal-header">
+		          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		          <h4 class="modal-title">BUSCAR USUARIOS</h4>
+		        </div>
+		        <div class="modal-body">
+		            <table id="table"></table>
+					<div id="pager"></div>
+		        </div>
+		        <div class="modal-footer">
+		          <button type="button" class="btn btn-success" data-dismiss="modal">Cerrar</button>
+		        </div>
+		      </div><!-- /.modal-content -->
+		    </div><!-- /.modal-dialog -->
+		  </div><!-- /.modal -->
 			<!-- inicion llamar funcion footer -->
 			<?php footer(); ?>
 			<!-- fin llamar funcion footer -->
@@ -318,17 +352,22 @@
 		<!-- page specific plugin scripts -->
 
 		<!-- ace scripts -->
-		<script src="../dist/js/ace-elements.min.js"></script>
-		<script src="../dist/js/ace.min.js"></script>	
+		
 		<script src="../dist/js/jquery.maskedinput.min.js"></script>
 		<script src="../dist/js/bootstrap-editable.min.js"></script>
 		<script src="../dist/js/ace-editable.min.js"></script>			
 		<script src="../dist/js/jquery.gritter.min.js"></script>
 		<script src="../dist/js/chosen.jquery.min.js"></script>
-
+		<script src="../dist/js/ace-elements.min.js"></script>
+		<script src="../dist/js/ace.min.js"></script>	
+		
+		<script src="../dist/js/grid.locale-en.js"></script>	
+		<script src="../dist/js/jquery.jqGrid.min.js"></script>	
 		<!-- inline scripts related to this page -->		
 		<!--systems scrips -->
-		<script src="usuarios.js"></script>
+		<script src="usuarios.js"></script>		
+		<script src="../procesos/funciones_generales.js"></script>		
+		
 		<!-- -->
 	</body>
 </html>
