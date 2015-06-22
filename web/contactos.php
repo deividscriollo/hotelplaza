@@ -1,8 +1,8 @@
-
+<?php include'../data/front-end/index.php'; ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-	<title>Contacts</title>
+	<title>Contactos - Hotel Plaza Victoria</title>
 	<meta charset="utf-8">
 	<meta name = "format-detection" content = "telephone=no" />
 	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
@@ -35,35 +35,7 @@
 	<!--========================================================
 														HEADER 
 	=========================================================-->
-	<header id="header">
-		<div id="stuck_container">
-			<div class="container">
-				<h1 class="wow fadeInLeft"><a href="index.html"><img src="images/logo.png" alt="John Keys"></a> </h1>
-			</div>
-			<nav id="dc_gual">
-				<div class="container">
-					<ul class="sf-menu">
-						<li><a href="index.html">Home<strong></strong></a></li>
-						<li><a href="index-1.html">Rooms<strong></strong></a></li>
-						<li><a href="index-2.html">Services<strong></strong></a>
-							<ul class="submenu">
-								<li><a href="#">columns 01</a></li>
-								<li><a href="#">columns 02</a></li>
-								<li><a href="#">columns 03</a>
-									<ul class="submenu2">
-										<li><a href="#">columns 04</a></li>
-										<li><a href="#">columns 05</a></li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-						<li><a href="index-3.html">Packages<strong></strong></a></li>
-						<li class="current" id="last-li"><a href="index-4.html">Contacts<strong></strong></a></li>
-					</ul>
-				</div>
-			</nav>
-		</div>
-	</header>
+	<?php print menu(); ?>
 	<!--========================================================
 														CONTENT 
 	=========================================================-->
@@ -212,19 +184,7 @@
 	<!--========================================================
 														FOOTER 
 	=========================================================-->
-	<footer id="footer">
-		<div class="container">
-			<div class="row">
-				<div class="grid_12">
-					<div class="wrapper  wow fadeInRight">
-						<h1><a href="index.html"><img src="images/logo_footer.png" alt="John Keys"></a> </h1>
-					</div>
-					<p class="txt_priv wow fadeInLeft">&copy; <span id="copyright-year"></span> | <a href="index-5.html">Privacy Policy</a></p>
-
-				</div>
-			</div>
-		</div>
-	</footer>
+	<?php footer(); ?>
 
 
 

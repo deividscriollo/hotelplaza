@@ -1,8 +1,8 @@
-
+<?php include'../data/front-end/index.php'; ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-	<title>Packages</title>
+	<title>Paqutes - Hotel Plaza Victoria</title>
 	<meta charset="utf-8">
 	<meta name = "format-detection" content = "telephone=no" />
 	<link rel="icon" href="images/favicon.ico" type="image/x-icon">
@@ -30,48 +30,7 @@
 	<!--========================================================
 														HEADER 
 	=========================================================-->
-	<header id="header">
-		<div id="stuck_container">
-			<div class="container">
-				<div class="row">
-					<div class="grid_3">
-						<div class="grid_3">							
-							<div class="dc_contexto_reserva">
-								593 (06) 5001500 / 2600067 / 2600887
-							</div>
-						</div>
-					</div>
-					<div class="grid_6">
-						<h1 class="wow fadeInLeft">
-							<a href="index.html"><img src="images/logo.png" alt="John Keys"></a>
-						</h1>
-					</div>
-					<div class="grid_3">
-						<div class="dc_btn_reserva">
-							RESERVACIÓN
-						</div>
-					</div>
-				</div>
-				
-			</div>
-			<nav id="dc_gual">
-				<div class="container">
-					<ul class="sf-menu">
-						<li><a href="index.html">Home<strong></strong></a></li>
-						<li><a href="index-1.html">Habitaciones<strong></strong></a></li>
-						<li><a href="index-2.html">Galería<strong></strong></a>
-							<ul class="submenu">								
-								<li><a href="#">Imagenes</a></li>								
-								<li><a href="#">Video</a></li>
-							</ul>
-						</li>
-						<li class="current"><a href="index-3.html">Packages<strong></strong></a></li>
-						<li id="last-li"><a href="index-4.html">Contacts<strong></strong></a></li>
-					</ul>
-				</div>
-			</nav>
-		</div>
-	</header>
+	<?php print menu(); ?>
 	<!--========================================================
 														CONTENT 
 	=========================================================-->
