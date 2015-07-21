@@ -3,15 +3,15 @@
 	function cargarSelect($sql, $tam) {		
 		$db = new MySQL();			
 	    $lista = array();
-	    $data = 0;	    
-	    $sql = $db->consulta($sql);
-		if($db->num_rows($sql) > 0){
-			while($row = $db->fetch_array($sql)){ 
-				for($i = 0; $i < $tam; $i++){	            						
-	            	$lista[] = utf8_decode($row[$i]);	   	            	         
+	    $data = 0;	    	    
+	    $sql = $db->consulta($sql);	    
+		if($db->num_rows($sql) > 0){			
+			while($row = $db->fetch_array($sql)){ 				
+				for($i = 0; $i < $tam; $i++){	            											
+	            	$lista[] = utf8_encode($row[$i]);
 	            }	   		
-		 	}
-		}	    
+		 	}		 	
+		}	    		
 	    echo $lista = json_encode($lista);	    
 	}
 
@@ -48,11 +48,10 @@
 	    	return $sql;     
 	    }	    	    
 	}
-	function guardarSql($sql) {
+	function guardarSql($sql) {			    
 	    $resp = true;    
-	    $db = new MySQL();				    	    	    
-	    $sql = $db->consulta($sql);
-
+	    $db = new MySQL();	    	    
+	    $sql = $db->consulta($sql);	    	    
 	   if($sql){
 	   	    $resp = 'true';
 	    } else {

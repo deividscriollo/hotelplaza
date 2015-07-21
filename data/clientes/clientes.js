@@ -7,7 +7,7 @@ function inicio (){
 	});
 	$("input:not([readonly='readonly']):text:visible:first").focus();   
 	// inicializacion de formato txt_ telefono1
-	$('#txt_3').mask('(999) 999-999');
+	$('#txt_6').mask('(999) 999-999');
 	$('#txt_7').mask('(999) 999-9999');
 	///////////varias validaciones//////////////}
 		//editables on first profile page
@@ -128,247 +128,30 @@ function inicio (){
 	/*-----------------------*/
 	$("input").on("keyup click",function (e){//campos requeridos		
 		comprobarCamposRequired(e.currentTarget.form.id)
-	});	
-	carga_usuarios();//cargar tipo  usuarios		    	
+	});		
+	/*----procesos ci ruc pass-----*/
+	$("#txt_1").change(function (){
+		documentos("0");
+	});
+	$("#txt_2").keyup(function(){
+		ci_ruc_pass("txt_2",$("#txt_2").val(),$("#txt_1").val())
+	});
+	/*--cargar combos dependientes--*/   
 	carga_ubicaciones("txt_9","txt_10","txt_11");//pais provincia ciudad
-
 	$("#txt_9").change(function(){
 		change_pais("txt_9","txt_10","txt_11");
 	});
 	$("#txt_10").change(function(){
 		change_provincia("txt_9","txt_10","txt_11");
 	});
-	/**/
-	$("#txt_1").on("keyup",function(){		
-		if($("#form-field-checkbox").prop("checked"))
-			ci("txt_1","ON");
-		else
-			ci("txt_1","OFF");
-	});	
-	$("#form-field-checkbox").click(function(){
-		if($("#form-field-checkbox").prop("checked")){
-			$("#txt_1").val("");
-			$("#txt_1").focus();
-			$("#txt_1").prop("maxlength","30");
-		}
-		else{
-			$("#txt_1").val("");
-			$("#txt_1").focus();
-			$("#txt_1").prop("maxlength","10");
-		}
-	});
-	/**/
+	/**/		
 	$("#btn_0").on("click",guardar);	
 	$("#btn_1").on("click",limpiar_form);
 	$("#btn_2").on("click",actualizar_form);	
 	$("#btn_4").on("click",function (){		
-		var resp = "";		
-		resp =atras($("#txt_o").val(),"usuarios","secuencia.php");		
-		console.log(resp)  
-		if(resp[0] != false){
-			$("#txt_o").val(resp[0][0]);
-			$("#txt_1").val(resp[0][4]);
-			$("#txt_2").val(resp[0][2]);
-			$("#txt_3").val(resp[0][5]);
-			$("#txt_7").val(resp[0][6]);		
-			$("#txt_12").val(resp[0][17]);
-			$("#txt_8").val(resp[0][7]);
-			$("#txt_13").val(resp[0][8]);		
-			
-			$("#avatar").attr("src","img/"+resp[0][16]);	
-
-			if(resp[0][15] == "ON"){
-		    	$("#form-field-checkbox").prop("checked",true);
-		    }else{
-		    	$("#form-field-checkbox").prop("checked",false);
-		    }	    
-		    $("#txt_5").val(resp[0][18]);
-		    $("#txt_6").val(resp[0][18]);
-		    $("#txt_4").val(resp[0][12]);
-		    $("#txt_4").trigger("chosen:updated");		    
-		    /**/
-	        var prov = 0;
-	        var pais = 0;
-	        $.ajax({/*obtnengo el id de provincia*/
-		        type: "POST",		        
-		        url: "../procesos/varios.php?tipo=0&id="+resp[0][11]+"&fun=5",        
-		        success: function(response) {       		        
-		        	prov = response;
-		        	console.log(prov);
-		        	$.ajax({/*obtnengo el id del pais*/
-				        type: "POST",			        
-				        url: "../procesos/varios.php?tipo=0&id="+prov+"&fun=6",        
-				        success: function(response) {         
-				        	pais = response;						        	
-				        	/*cambio los combos*/
-						    $.ajax({
-						        type: "POST",
-						        dataType: 'json',        
-						        url: "../procesos/varios.php?tipo=0&id=0&fun=2&tam=2",        
-						        success: function(response) {         			        	
-						        	$("#txt_9").html("");
-						            for (var i = 0; i < response.length; i=i+2) {            				            	
-						            	if(response[i] == pais){
-											$("#txt_9").append("<option value ="+response[i]+" selected>"+response[i+1]+"</option>");            																																
-						            	}
-										else{
-											$("#txt_9").append("<option value ="+response[i]+">"+response[i+1]+"</option>");            																																
-										}
-						            }   
-						            $("#txt_9").trigger("chosen:updated"); 
-						            $.ajax({        
-								        type: "POST",
-								        dataType: 'json',        
-								        url: "../procesos/varios.php?tipo=0&id="+pais+"&fun=3&tam=2",        
-								        success: function(response) {         			        	
-								        	$("#txt_10").html("");
-								            for (var i = 0; i < response.length; i=i+2) {            				            	
-								            	if(response[i] == prov){
-													$("#txt_10").append("<option value ="+response[i]+" selected>"+response[i+1]+"</option>");            																																
-								            	}
-												else{
-													$("#txt_10").append("<option value ="+response[i]+">"+response[i+1]+"</option>");            																																
-												}
-								            }   
-								            $("#txt_10").trigger("chosen:updated"); 
-								            $.ajax({        
-										        type: "POST",
-										        dataType: 'json',        
-										        url: "../procesos/varios.php?tipo=0&id="+prov+"&fun=4&tam=2",        
-										        success: function(response) {         			        	
-										        	$("#txt_11").html("");
-										            for (var i = 0; i < response.length; i=i+2) {            				            	
-										            	if(response[i] == resp[0][11]){
-															$("#txt_11").append("<option value ="+response[i]+" selected>"+response[i+1]+"</option>");            																																
-										            	}
-														else{
-															$("#txt_11").append("<option value ="+response[i]+">"+response[i+1]+"</option>");            																																
-														}
-										            }   
-										            $("#txt_11").trigger("chosen:updated");										                                         
-										        }
-										    });	      
-								                                         
-								        }
-								    });/**/		                            
-						        }
-						    });/**/							    
-				        }                   
-				    });
-		        }                   
-		    });	
-		}else{
-			alert("Sin registros anteriores");
-		}		
-	    comprobarCamposRequired("form_usuario");		    	            
-	    $("#btn_0").text("");
-        $("#btn_0").append("<span class='glyphicon glyphicon-log-in'></span> Modificar");     	            
-        /**/
 	});
 	$("#btn_5").on("click",function (){		
-		var resp = "";		
-		resp =adelante($("#txt_o").val(),"usuarios","secuencia.php");		
-		if(resp[0] != false){
-			$("#txt_o").val(resp[0][0]);
-			$("#txt_1").val(resp[0][4]);
-			$("#txt_2").val(resp[0][2]);
-			$("#txt_3").val(resp[0][5]);
-			$("#txt_7").val(resp[0][6]);		
-			$("#txt_12").val(resp[0][17]);
-			$("#txt_8").val(resp[0][7]);
-			$("#txt_13").val(resp[0][8]);		
-			
-			$("#avatar").attr("src","img/"+resp[0][16]);	
-
-			if(resp[0][15] == "ON"){
-		    	$("#form-field-checkbox").prop("checked",true);
-		    }else{
-		    	$("#form-field-checkbox").prop("checked",false);
-		    }	    
-		    $("#txt_5").val(resp[0][18]);
-		    $("#txt_6").val(resp[0][18]);
-		    $("#txt_4").val(resp[0][13]);
-		    $("#txt_4").trigger("chosen:updated");		    
-		    /**/
-	        var prov = 0;
-	        var pais = 0;
-	        $.ajax({/*obtnengo el id de provincia*/
-		        type: "POST",		        
-		        url: "../procesos/varios.php?tipo=0&id="+resp[0][11]+"&fun=5",        
-		        success: function(response) {         
-		        	prov = response;
-		        	console.log(prov);
-		        	$.ajax({/*obtnengo el id del pais*/
-				        type: "POST",			        
-				        url: "../procesos/varios.php?tipo=0&id="+prov+"&fun=6",        
-				        success: function(response) {         
-				        	pais = response;						        	
-				        	/*cambio los combos*/
-						    $.ajax({
-						        type: "POST",
-						        dataType: 'json',        
-						        url: "../procesos/varios.php?tipo=0&id=0&fun=2&tam=2",        
-						        success: function(response) {         			        	
-						        	$("#txt_9").html("");
-						            for (var i = 0; i < response.length; i=i+2) {            				            	
-						            	if(response[i] == pais){
-											$("#txt_9").append("<option value ="+response[i]+" selected>"+response[i+1]+"</option>");            																																
-						            	}
-										else{
-											$("#txt_9").append("<option value ="+response[i]+">"+response[i+1]+"</option>");            																																
-										}
-						            }   
-						            $("#txt_9").trigger("chosen:updated"); 
-						            $.ajax({        
-								        type: "POST",
-								        dataType: 'json',        
-								        url: "../procesos/varios.php?tipo=0&id="+pais+"&fun=3&tam=2",        
-								        success: function(response) {         			        	
-								        	$("#txt_10").html("");
-								            for (var i = 0; i < response.length; i=i+2) {            				            	
-								            	if(response[i] == prov){
-													$("#txt_10").append("<option value ="+response[i]+" selected>"+response[i+1]+"</option>");            																																
-								            	}
-												else{
-													$("#txt_10").append("<option value ="+response[i]+">"+response[i+1]+"</option>");            																																
-												}
-								            }   
-								            $("#txt_10").trigger("chosen:updated"); 
-								            $.ajax({        
-										        type: "POST",
-										        dataType: 'json',        
-										        url: "../procesos/varios.php?tipo=0&id="+prov+"&fun=4&tam=2",        
-										        success: function(response) {         			        	
-										        	$("#txt_11").html("");
-										            for (var i = 0; i < response.length; i=i+2) {            				            	
-										            	if(response[i] == resp[0][11]){
-															$("#txt_11").append("<option value ="+response[i]+" selected>"+response[i+1]+"</option>");            																																
-										            	}
-														else{
-															$("#txt_11").append("<option value ="+response[i]+">"+response[i+1]+"</option>");            																																
-														}
-										            }   
-										            $("#txt_11").trigger("chosen:updated");										                                         
-										        }
-										    });	      
-								                                         
-								        }
-								    });/**/		                            
-						        }
-						    });/**/							    
-				        }                   
-				    });
-		        }                   
-		    });	
-		}else{
-			alert("Sin registros superiores");
-		}		
-	    comprobarCamposRequired("form_usuario");		    	            
-	    $("#btn_0").text("");
-        $("#btn_0").append("<span class='glyphicon glyphicon-log-in'></span> Modificar");     	            
-        /**/
-	});
-	
+	});	
   	/*jqgrid*/    
 	jQuery(function($) {
 	    var grid_selector = "#table";
@@ -393,26 +176,19 @@ function inicio (){
 
 	    jQuery(grid_selector).jqGrid({	        
 	        datatype: "xml",
-	        url: 'xml_usuarios.php',        
-	        colNames: ['ID','id_hotel','NOMBRES','tipo_identificacion','CI','TELÉFONO','CELULAR','E-MAIL','USUARIO','ESTADO','FECHA','id_ciudad','id_cargo','CARGO','EXTRANJERO','imagen','DIRECCION','clave','estado'],
+	        url: 'xml_clientes.php',        
+	        colNames: ['ID','NOMBRES','APELLIDOS','TIPO','DOCUMENTO','DIRECCIÓN','TELÉFONO','CELULAR','E-MAIL','id_ciudad','imagen','FECHA','clave'],
 	        colModel:[      
-	            {name:'txt_o',index:'txt_o',frozen:true,align:'left',search:false},
-	            {name:'id_hotel',index:'id_hotel',frozen : true,align:'left',search:false},
-	            {name:'txt_2',index:'nombre_usuario',frozen : true,align:'left',search:true},
-	            {name:'tipo_identificacion',index:'tipo_identificacion',frozen : true,align:'left',search:false},
-	            {name:'txt_1',index:'identificacion',frozen : true,align:'left',search:true},	            
-	            {name:'txt_3',index:'txt_3',frozen : true,align:'left',search:false},
-	            {name:'txt_7',index:'txt_7',frozen : true,align:'left',search:false},
-	            {name:'txt_8',index:'txt_8',frozen : true,align:'left',search:false},            
-	            {name:'txt_13',index:'usuario',frozen : true,align:'left',search:true},
-	            {name:'estado',index:'estado',frozen : true,align:'left',search:false},
-	            {name:'fecha',index:'fecha',frozen : true,align:'left',search:false},	            
-	            {name:'txt_11',index:'txt_11',frozen : true,align:'left',search:false},	            
-	            {name:'txt_4',index:'txt_4',frozen : true,align:'left',search:false},
-	            {name:'nombre_cargo',index:'nombre_cargo',frozen : true,align:'left',search:false},	            	            
-	            {name:'extranjero',index:'extranjero',frozen : true,align:'left',search:false},
-	            {name:'imagen',index:'imagen',frozen : true,align:'left',search:false},
-	            {name:'txt_12',index:'dirrecion',frozen : true,align:'left',search:false},
+	            {name:'txt_o',index:'txt_o',frozen:true,align:'left',search:false},	            
+	            {name:'txt_3',index:'nombre_cliente',frozen : true,align:'left',search:true},
+	            {name:'txt_4',index:'nombre_cliente',frozen : true,align:'left',search:true},
+	            {name:'txt_1',index:'tipo_identificacion',frozen : true,align:'left',search:false},
+	            {name:'txt_2',index:'identificacion',frozen : true,align:'left',search:true},	            
+	            {name:'txt_5',index:'txt_5',frozen : true,align:'left',search:false},
+	            {name:'txt_6',index:'txt_6',frozen : true,align:'left',search:false},
+	            {name:'txt_7',index:'txt_7',frozen : true,align:'left',search:false},            
+	            {name:'txt_8',index:'txt_8',frozen : true,align:'left',search:true},	            
+	            {name:'txt_11',index:'id_ciudad',frozen : true,align:'left',search:false},	            	            
 	            {name:'txt_5',index:'txt_5',frozen : true,align:'left',search:false},
 	            {name:'estado',index:'estado',frozen : true,align:'left',search:false},	            	            
 	        ],          
@@ -763,47 +539,19 @@ function inicio (){
 	        $('.ui-jqdialog').remove();
 	    });
 	});
-    /**/    
-}
-
-function carga_usuarios(){
-	$.ajax({        
-	    type: "POST",
-	    dataType: 'json',        
-	    url: "../procesos/varios.php?tipo=0&fun=1&tam=2",          
-	    success: function(response) {         			        	
-	    	$("#txt_4").html("");
-	        for (var i = 0; i < response.length; i=i+2) {            				            		        	
-				$("#txt_4").append("<option value ="+response[i]+">"+response[i+1]+"</option>");
-	        }   
-	        $("#txt_4").trigger("chosen:updated"); 	                                     
-	    }
-	});	      
+    /**/       
 }
 
 function guardar(){///funcion para guardar datos
-	var resp=comprobarCamposRequired("form_usuario");	    
+	var resp=comprobarCamposRequired("form_clientes");	    
 	if(resp==true){    		
-		$("#form_usuario").on("submit",function (e){				
+		$("#form_clientes").on("submit",function (e){				
 			var texto=($("#btn_0").text()).trim();															
-			var valores = $("#form_usuario").serialize();
+			var valores = $("#form_clientes").serialize();
 			if(texto=="Guardar"){ 				
-				if($("#txt_5").val() == $("#txt_6").val()){
-					guardar_datos(valores,"g",e);		
-				}else{
-					alert("Repita la contraseña correctamente");	
-					$("#txt_6").val("");
-					$("#txt_6").focus();
-				}														
+				guardar_datos(valores,"g",e);						
 	        }else{	            
-				if($("#txt_5").val() == $("#txt_6").val()){
-					guardar_datos(valores,"m",e);		
-				}else{
-					alert("Repita la contraseña correctamente");	
-					$("#txt_6").val("");
-					$("#txt_6").focus();
-				}						
-				
+				guardar_datos(valores,"m",e);										
 	        }	
 	        e.preventDefault();
     		$(this).unbind("submit")		    			            			
@@ -813,7 +561,7 @@ function guardar(){///funcion para guardar datos
 }
 function guardar_datos(valores,tipo,p){		
 	$.ajax({
-	    url: "usuario.php", 	    				    	    
+	    url: "clientes.php", 	    				    	    
 	    data:  valores + "&img="+$("#avatar")[0].src + "&tipo="+tipo, 	    	    
 	    type: "POST",				
 	    success: function(data){				    
@@ -823,14 +571,14 @@ function guardar_datos(valores,tipo,p){
 	    		$('#table').trigger('reloadGrid');					
 	    	}else{
 	    		if( data == 1 ){	    		
-	    			alert('Este usuario ya existe. Ingrese otro')	;
-	    			$("#txt_13").val("");
-	    			$("#txt_13").focus();
+	    			alert('Este Correo Electrónico ya existe. Ingrese otro')	;
+	    			$("#txt_8").val("");
+	    			$("#txt_8").focus();
 	    		}else{	    			
 	    			if(data == 2){
-	    				alert('Este nro de cédula ya existe ingrese otro')	;
-	    				$("#txt_1").val("");
-	    				$("#txt_1").focus();
+	    				alert('Este nro de documento ya existe ingrese otro')	;
+	    				$("#txt_2").val("");
+	    				$("#txt_2").focus();
 	    			}
 	    		}
 	    	}
