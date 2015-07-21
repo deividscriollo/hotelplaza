@@ -170,7 +170,7 @@
 																<div class="form-group has-error">
 																	<label class="col-sm-3 control-label no-padding-right" for="txt_5"> Dirección: </label>
 																	<div class="col-sm-9">
-																		<input type="text" id="txt_5" name="txt_5" placeholder="Dirección" class="form-control"  required pattern="[A-Za-záéíóúÁÉÍÓÚñÑ0-9]{1,}" data-toggle="tooltip" data-original-title="Ingrese la dirección del usuario a crear" />
+																		<input type="text" id="txt_5" name="txt_5" placeholder="Dirección" class="form-control"  required pattern="[A-Za-záéíóúÁÉÍÓÚñÑ0-9]{1,}" data-toggle="tooltip" data-original-title="Ingrese la dirección del cliente a crear" />
 																	</div>
 																</div>
 																<div class="form-group has-error">

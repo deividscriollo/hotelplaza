@@ -68,6 +68,13 @@ function limpiar_form(e){
             $("#avatar").prop("src","img/default.png");            
             $("#table").trigger('reloadGrid');     
         }else{
+            if(form == "form_clientes"){
+                $("#btn_0").text("");
+                $("#btn_0").append("<span class='glyphicon glyphicon-log-in'></span> Guardar");
+                $("#avatar").prop("src","img/default.png");            
+                $("#table").trigger('reloadGrid');     
+            }else{
+            }           
         }           
         $("input:not([readonly='readonly']):text:visible:first").focus();   
     }

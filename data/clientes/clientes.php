@@ -55,21 +55,26 @@
 		}
 	}else{
 		if($_POST['tipo'] == "m"){
-			$repetidos = repetidos("usuario",strtoupper($_POST["txt_13"]),"usuario","m",$_POST['txt_o'],"id");		
+			$repetidos = repetidos("email",strtolower($_POST["txt_8"]),"cliente","m",$_POST['txt_o'],"id");		
 			if( $repetidos == 'true'){
 				$data = 1; /// este dato ya existe;
-			}else{		
-				if (strpos($cadena, $buscar) ==  FALSE) {
-					$sql ="update usuario set id_hotel='1',nombre_usuario='".$_POST['txt_2']."',tipo_identificacion='".'CI'."',identificacion='".$_POST['txt_1']."',telefono='".$_POST['txt_3']."',celular='".$_POST['txt_7']."',email='".$_POST['txt_8']."',usuario='".$_POST['txt_13']."',estado = '0',id_ciudad='".$ciudad."',id_cargo='".$_POST['txt_4']."',extranjero='".$check."',direccion='".$_POST['txt_12']."' where id = '".$_POST['txt_o']."'";												
-				}else{	
-					$resp = img_64("img",$_POST['img'],'png',$_POST['txt_o']);														
-					if($resp == "true"){												
-						$sql ="update usuario set id_hotel='1',nombre_usuario='".$_POST['txt_2']."',tipo_identificacion='".'CI'."',identificacion='".$_POST['txt_1']."',telefono='".$_POST['txt_3']."',celular='".$_POST['txt_7']."',email='".$_POST['txt_8']."',usuario='".$_POST['txt_13']."',estado = '0',id_ciudad='".$ciudad."',id_cargo='".$_POST['txt_4']."',extranjero='".$check."',imagen='".$_POST['txt_o'].".png',direccion='".$_POST['txt_12']."' where id = '".$_POST['txt_o']."'";				
-					}
-					else{						
-						$sql ="update usuario set id_hotel='1',nombre_usuario='".$_POST['txt_2']."',tipo_identificacion='".'CI'."',identificacion='".$_POST['txt_1']."',telefono='".$_POST['txt_3']."',celular='".$_POST['txt_7']."',email='".$_POST['txt_8']."',usuario='".$_POST['txt_13']."',estado = '0',id_ciudad='".$ciudad."',id_cargo='".$_POST['txt_4']."',extranjero='".$check."',direccion='".$_POST['txt_12']."' where id = '".$_POST['txt_o']."'";				
-					}
-				}	
+			}else{	
+				$repetidos = repetidos("identificacion",strtoupper($_POST["txt_2"]),"cliente","m",$_POST['txt_o'],"id");
+				if( $repetidos == 'true'){
+					$data = 2; /// este nro de cedula ya existe;
+				}else{							
+					if (strpos($cadena, $buscar) ==  FALSE) {
+						$sql ="update cliente set nombre_cliente='".$_POST['txt_3']."',apellido_cliente='".$_POST['txt_4']."',tipo_identificacion='".$_POST['txt_1']."',identificacion='".$_POST['txt_2']."',direccion='".$_POST['txt_5']."',telefono='".$_POST['txt_6']."',celular='".$_POST['txt_7']."',email='".$_POST['txt_8']."',id_ciudad='".$ciudad."' where id= '".$_POST['txt_o']."'";							
+					}else{	
+						$resp = img_64("img",$_POST['img'],'png',$_POST['txt_o']);
+						if($resp == "true"){	
+							$sql ="update cliente set nombre_cliente='".$_POST['txt_3']."',apellido_cliente='".$_POST['txt_4']."',tipo_identificacion='".$_POST['txt_1']."',identificacion='".$_POST['txt_2']."',direccion='".$_POST['txt_5']."',telefono='".$_POST['txt_6']."',celular='".$_POST['txt_7']."',email='".$_POST['txt_8']."',id_ciudad='".$ciudad."',img='".$_POST['txt_o'].".png' where id= '".$_POST['txt_o']."'";				
+						}
+						else{
+							$sql ="update cliente set nombre_cliente='".$_POST['txt_3']."',apellido_cliente='".$_POST['txt_4']."',tipo_identificacion='".$_POST['txt_1']."',identificacion='".$_POST['txt_2']."',direccion='".$_POST['txt_5']."',telefono='".$_POST['txt_6']."',celular='".$_POST['txt_7']."',email='".$_POST['txt_8']."',id_ciudad='".$ciudad."' where id= '".$_POST['txt_o']."'";
+						}
+					}	
+				}
 				$guardar = guardarSql($sql);
 				if( $guardar == 'true'){
 					$data = 0; ////datos guardados

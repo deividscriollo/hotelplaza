@@ -149,8 +149,200 @@ function inicio (){
 	$("#btn_1").on("click",limpiar_form);
 	$("#btn_2").on("click",actualizar_form);	
 	$("#btn_4").on("click",function (){		
+		var resp = "";		
+		resp =atras($("#txt_o").val(),"clientes","secuencia.php");				
+		if(resp[0] != false){
+			$("#txt_o").val(resp[0][0]);
+			$("#txt_1").val(resp[0][3]);
+			$("#txt_2").val(resp[0][4]);
+			$("#txt_3").val(resp[0][1]);
+			$("#txt_4").val(resp[0][2]);		
+			$("#txt_5").val(resp[0][5]);
+			$("#txt_6").val(resp[0][6]);
+			$("#txt_7").val(resp[0][7]);		
+			
+			$("#txt_8").val(resp[0][8]);
+			$("#txt_12").val(resp[0][12]);
+
+			$("#avatar").attr("src","img/"+resp[0][10]);						    
+		    /**/
+	        var prov = 0;
+	        var pais = 0;
+	        $.ajax({/*obtnengo el id de provincia*/
+		        type: "POST",		        
+		        url: "../procesos/varios.php?tipo=0&id="+resp[0][9]+"&fun=5",        
+		        success: function(response) {       		        
+		        	prov = response;
+		        	console.log(prov);
+		        	$.ajax({/*obtnengo el id del pais*/
+				        type: "POST",			        
+				        url: "../procesos/varios.php?tipo=0&id="+prov+"&fun=6",        
+				        success: function(response) {         
+				        	pais = response;						        	
+				        	/*cambio los combos*/
+						    $.ajax({
+						        type: "POST",
+						        dataType: 'json',        
+						        url: "../procesos/varios.php?tipo=0&id=0&fun=2&tam=2",        
+						        success: function(response) {         			        	
+						        	$("#txt_9").html("");
+						            for (var i = 0; i < response.length; i=i+2) {            				            	
+						            	if(response[i] == pais){
+											$("#txt_9").append("<option value ="+response[i]+" selected>"+response[i+1]+"</option>");            																																
+						            	}
+										else{
+											$("#txt_9").append("<option value ="+response[i]+">"+response[i+1]+"</option>");            																																
+										}
+						            }   
+						            $("#txt_9").trigger("chosen:updated"); 
+						            $.ajax({        
+								        type: "POST",
+								        dataType: 'json',        
+								        url: "../procesos/varios.php?tipo=0&id="+pais+"&fun=3&tam=2",        
+								        success: function(response) {         			        	
+								        	$("#txt_10").html("");
+								            for (var i = 0; i < response.length; i=i+2) {            				            	
+								            	if(response[i] == prov){
+													$("#txt_10").append("<option value ="+response[i]+" selected>"+response[i+1]+"</option>");            																																
+								            	}
+												else{
+													$("#txt_10").append("<option value ="+response[i]+">"+response[i+1]+"</option>");            																																
+												}
+								            }   
+								            $("#txt_10").trigger("chosen:updated"); 
+								            $.ajax({        
+										        type: "POST",
+										        dataType: 'json',        
+										        url: "../procesos/varios.php?tipo=0&id="+prov+"&fun=4&tam=2",        
+										        success: function(response) {         			        	
+										        	$("#txt_11").html("");
+										            for (var i = 0; i < response.length; i=i+2) {            				            	
+										            	if(response[i] == resp[0][9]){
+															$("#txt_11").append("<option value ="+response[i]+" selected>"+response[i+1]+"</option>");            																																
+										            	}
+														else{
+															$("#txt_11").append("<option value ="+response[i]+">"+response[i+1]+"</option>");            																																
+														}
+										            }   
+										            $("#txt_11").trigger("chosen:updated");										                                         
+										        }
+										    });	      
+								                                         
+								        }
+								    });/**/		                            
+						        }
+						    });/**/							    
+				        }                   
+				    });
+		        }                   
+		    });	
+		}else{
+			alert("Sin registros anteriores");
+		}		
+	    comprobarCamposRequired("form_clientes");		    	            
+	    $("#btn_0").text("");
+        $("#btn_0").append("<span class='glyphicon glyphicon-log-in'></span> Modificar");     	            
+        /**/	
 	});
 	$("#btn_5").on("click",function (){		
+		var resp = "";		
+		resp =adelante($("#txt_o").val(),"clientes","secuencia.php");				
+		if(resp[0] != false){
+			$("#txt_o").val(resp[0][0]);
+			$("#txt_1").val(resp[0][3]);
+			$("#txt_2").val(resp[0][4]);
+			$("#txt_3").val(resp[0][1]);
+			$("#txt_4").val(resp[0][2]);		
+			$("#txt_5").val(resp[0][5]);
+			$("#txt_6").val(resp[0][6]);
+			$("#txt_7").val(resp[0][7]);		
+			
+			$("#txt_8").val(resp[0][8]);
+			$("#txt_12").val(resp[0][12]);
+
+			$("#avatar").attr("src","img/"+resp[0][10]);						    
+		    /**/
+	        var prov = 0;
+	        var pais = 0;				
+
+		    /**/
+	        var prov = 0;
+	        var pais = 0;
+	        $.ajax({/*obtnengo el id de provincia*/
+		        type: "POST",		        
+		        url: "../procesos/varios.php?tipo=0&id="+resp[0][9]+"&fun=5",        
+		        success: function(response) {         
+		        	prov = response;
+		        	console.log(prov);
+		        	$.ajax({/*obtnengo el id del pais*/
+				        type: "POST",			        
+				        url: "../procesos/varios.php?tipo=0&id="+prov+"&fun=6",        
+				        success: function(response) {         
+				        	pais = response;						        	
+				        	/*cambio los combos*/
+						    $.ajax({
+						        type: "POST",
+						        dataType: 'json',        
+						        url: "../procesos/varios.php?tipo=0&id=0&fun=2&tam=2",        
+						        success: function(response) {         			        	
+						        	$("#txt_9").html("");
+						            for (var i = 0; i < response.length; i=i+2) {            				            	
+						            	if(response[i] == pais){
+											$("#txt_9").append("<option value ="+response[i]+" selected>"+response[i+1]+"</option>");            																																
+						            	}
+										else{
+											$("#txt_9").append("<option value ="+response[i]+">"+response[i+1]+"</option>");            																																
+										}
+						            }   
+						            $("#txt_9").trigger("chosen:updated"); 
+						            $.ajax({        
+								        type: "POST",
+								        dataType: 'json',        
+								        url: "../procesos/varios.php?tipo=0&id="+pais+"&fun=3&tam=2",        
+								        success: function(response) {         			        	
+								        	$("#txt_10").html("");
+								            for (var i = 0; i < response.length; i=i+2) {            				            	
+								            	if(response[i] == prov){
+													$("#txt_10").append("<option value ="+response[i]+" selected>"+response[i+1]+"</option>");            																																
+								            	}
+												else{
+													$("#txt_10").append("<option value ="+response[i]+">"+response[i+1]+"</option>");            																																
+												}
+								            }   
+								            $("#txt_10").trigger("chosen:updated"); 
+								            $.ajax({        
+										        type: "POST",
+										        dataType: 'json',        
+										        url: "../procesos/varios.php?tipo=0&id="+prov+"&fun=4&tam=2",        
+										        success: function(response) {         			        	
+										        	$("#txt_11").html("");
+										            for (var i = 0; i < response.length; i=i+2) {            				            	
+										            	if(response[i] == resp[0][9]){
+															$("#txt_11").append("<option value ="+response[i]+" selected>"+response[i+1]+"</option>");            																																
+										            	}
+														else{
+															$("#txt_11").append("<option value ="+response[i]+">"+response[i+1]+"</option>");            																																
+														}
+										            }   
+										            $("#txt_11").trigger("chosen:updated");										                                         
+										        }
+										    });	      
+								                                         
+								        }
+								    });/**/		                            
+						        }
+						    });/**/							    
+				        }                   
+				    });
+		        }                   
+		    });	
+		}else{
+			alert("Sin registros superiores");
+		}		
+	    comprobarCamposRequired("form_usuario");		    	            
+	    $("#btn_0").text("");
+        $("#btn_0").append("<span class='glyphicon glyphicon-log-in'></span> Modificar");     	            
+        /**/
 	});	
   	/*jqgrid*/    
 	jQuery(function($) {
@@ -181,14 +373,14 @@ function inicio (){
 	        colModel:[      
 	            {name:'txt_o',index:'txt_o',frozen:true,align:'left',search:false},	            
 	            {name:'txt_3',index:'nombre_cliente',frozen : true,align:'left',search:true},
-	            {name:'txt_4',index:'nombre_cliente',frozen : true,align:'left',search:true},
+	            {name:'txt_4',index:'apellido_cliente',frozen : true,align:'left',search:true},
 	            {name:'txt_1',index:'tipo_identificacion',frozen : true,align:'left',search:false},
 	            {name:'txt_2',index:'identificacion',frozen : true,align:'left',search:true},	            
 	            {name:'txt_5',index:'txt_5',frozen : true,align:'left',search:false},
 	            {name:'txt_6',index:'txt_6',frozen : true,align:'left',search:false},
 	            {name:'txt_7',index:'txt_7',frozen : true,align:'left',search:false},            
 	            {name:'txt_8',index:'txt_8',frozen : true,align:'left',search:true},	            
-	            {name:'txt_11',index:'id_ciudad',frozen : true,align:'left',search:false},	            	            	            
+	            {name:'id_ciudad',index:'id_ciudad',frozen : true,align:'left',search:false},	            	            	            
 	            {name:'img',index:'img',frozen : true,align:'left',search:false},	            	            
 	            {name:'fecha_creacion',index:'fecha_creacion',frozen : true,align:'left',search:false},	            	            
 	            {name:'txt_12',index:'clave',frozen : true,align:'left',search:false},	            	            
@@ -224,21 +416,19 @@ function inicio (){
 	            $("#txt_1").val(ret.txt_1);
 	            $("#txt_2").val(ret.txt_2);
 	            $("#txt_3").val(ret.txt_3);
-	            $("#txt_4").val(ret.txt_4);
-	            $("#txt_4").trigger("chosen:updated");            
+	            $("#txt_4").val(ret.txt_4);	            
 	            $("#txt_5").val(ret.txt_5);
-	            $("#txt_6").val(ret.txt_5);
+	            $("#txt_6").val(ret.txt_6);
 	            $("#txt_7").val(ret.txt_7);
-	            $("#txt_8").val(ret.txt_8);	            
-	            $("#txt_12").val(ret.txt_12);
-	            $("#txt_13").val(ret.txt_13);	            	           
-	            $("#avatar").attr("src","img/"+ret.imagen);	
+	            $("#txt_8").val(ret.txt_8);	            	            
+	            $("#txt_12").val(ret.txt_12);	            
+	            $("#avatar").attr("src","img/"+ret.img);	
 	            /**/
 	            var prov = 0;
 	            var pais = 0;
 	            $.ajax({/*obtnengo el id de provincia*/
 			        type: "POST",			        
-			        url: "../procesos/varios.php?tipo=0&id="+ret.txt_11+"&fun=5",        
+			        url: "../procesos/varios.php?tipo=0&id="+ret.id_ciudad+"&fun=5",        
 			        success: function(response) {         
 			        	prov = response;
 			        	$.ajax({/*obtnengo el id del pais*/
@@ -306,24 +496,18 @@ function inicio (){
 			    });			    	            
 	            /**/
 	            $('#myModal').modal('hide');
-	            comprobarCamposRequired("form_usuario");  
+	            comprobarCamposRequired("form_clientes");  
 	            $("#btn_0").text("");
 	            $("#btn_0").append("<span class='glyphicon glyphicon-log-in'></span> Modificar");     	            
 	        },
 	        
-	        caption: "LISTA DE USUARIOS"
+	        caption: "LISTA DE CLIENTES"
 	    });
-		jQuery(grid_selector).jqGrid('hideCol', "txt_o");
-		jQuery(grid_selector).jqGrid('hideCol', "txt_11");
-		jQuery(grid_selector).jqGrid('hideCol', "txt_4");
-		jQuery(grid_selector).jqGrid('hideCol', "estado");
-		jQuery(grid_selector).jqGrid('hideCol', "imagen");
-		jQuery(grid_selector).jqGrid('hideCol', "extranjero");		
-		jQuery(grid_selector).jqGrid('hideCol', "txt_5");		
-		jQuery(grid_selector).jqGrid('hideCol', "id_hotel");	
-		jQuery(grid_selector).jqGrid('hideCol', "tipo_identificacion");	
-		jQuery(grid_selector).jqGrid('hideCol', "fecha");	
-		jQuery(grid_selector).jqGrid('hideCol', "fecha");	
+		jQuery(grid_selector).jqGrid('hideCol', "txt_o");		
+		jQuery(grid_selector).jqGrid('hideCol', "txt_1");	
+		jQuery(grid_selector).jqGrid('hideCol', "id_ciudad");	
+		jQuery(grid_selector).jqGrid('hideCol', "txt_12");
+		
 	    $(window).triggerHandler('resize.jqGrid');//cambiar el tamaño para hacer la rejilla conseguir el tamaño correcto
 
 	    function aceSwitch( cellvalue, options, cell ) {
