@@ -5,16 +5,16 @@ function include(url){
 
 /* cookie.JS
 ========================================================*/
-include('js/jquery.cookie.js');
+include('../js/jquery.cookie.js');
 
 
 /* DEVICE.JS
 ========================================================*/
-include('js/device.min.js');
+include('../js/device.min.js');
 
 /* Stick up menu
 ========================================================*/
-include('js/tmstickup.js');
+include('../js/tmstickup.js');
 $(window).load(function() { 
   if ($('html').hasClass('desktop')) {
       $('#stuck_container').TMStickUp({
@@ -24,16 +24,16 @@ $(window).load(function() {
 
 /* Easing library
 ========================================================*/
-include('js/jquery.easing.1.3.js');
+include('../js/jquery.easing.1.3.js');
 
 /* touchTouch Gallery
 ========================================================*/
-include('js/touchTouch.jquery.js');
+include('../js/touchTouch.jquery.js');
 
 
 /* ToTop
 ========================================================*/
-include('js/jquery.ui.totop.js');
+include('../js/jquery.ui.totop.js');
 $(function () {   
   $().UItoTop({ easingType: 'easeOutQuart' });
 });
@@ -42,8 +42,8 @@ $(function () {
 
 /* DEVICE.JS AND SMOOTH SCROLLIG
 ========================================================*/
-include('js/jquery.mousewheel.min.js');
-include('js/jquery.simplr.smoothscroll.min.js');
+include('../js/jquery.mousewheel.min.js');
+include('../js/jquery.simplr.smoothscroll.min.js');
 $(function () { 
   if ($('html').hasClass('desktop')) {
       $.srSmoothscroll({
@@ -56,7 +56,7 @@ $(function () {
 
 /* Stellar.js
 ========================================================*/
-include('js/stellar/jquery.stellar.js');
+include('../js/stellar/jquery.stellar.js');
 $(window).load(function() { 
   if ($('html').hasClass('desktop')) {
       $.stellar({
@@ -77,8 +77,8 @@ $(document).ready(function() {
 
 /* Superfish menu
 ========================================================*/
-include('js/superfish.js');
-include('js/jquery.mobilemenu.js');
+include('../js/superfish.js');
+include('../js/jquery.mobilemenu.js');
 
 
 /* Orientation tablet fix

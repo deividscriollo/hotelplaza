@@ -4,19 +4,215 @@
 @import url(//fonts.googleapis.com/css?family=Roboto+Slab:400,700);
 @import url(//fonts.googleapis.com/css?family=Roboto:400,700);
 /*========================================================
-										Main variables
+                    Main variables
 =========================================================*/
 /*hover color*/
 /*hover 2 color*/
 /*color of content*/
 /*color of border*/
 /*========================================================
-										Typography
+                    Typography
 =========================================================*/
 /*color of input fields in contact form*/
 /*========================================================
-										Main layout styles
+                    Main layout styles
 =========================================================*/
+
+/*procesando mejor del autor*/
+.btn_habitacion{
+  border: 1px solid #261A0E#917E4A;
+  /*border-bottom-color: #261A0E;*/
+  padding: 5px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;  
+}
+.dccenter{
+  text-align: center;
+}
+.isStuck .dc_contexto_reserva{
+  display: none;
+}
+.isStuck .dc_btn_reserva{
+  display: none;
+}
+.isStuck .dvian{
+  display: none;
+}
+ .box_skitter_large{
+                /*background: red;*/
+    color: blue;
+    height: 100px;
+    width: 100%!important;
+  }
+.dc_btn_reserva{
+
+  padding-top: 8px;
+  border-top: 2px solid #3B2F21;
+  padding-bottom: 10px;
+  /*background: url(../images/bg_pattern1.png);*/
+  background: #917E4A;
+  color: #FFF;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+  font: 20px/20px 'Roboto', Arial, sans-serif;
+}
+.dc_btn_reserva:hover{
+  padding-top: 15px;
+  padding-bottom: 10px;
+  /*background: url(../images/bg_pattern1.png);*/  
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  cursor: pointer;
+  font-size: 23px;
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+  /*color: #FFF;*/
+}
+
+.dc_contexto_reserva{
+  padding-top: 8px;
+  border-top: 2px solid #3B2F21;  
+  padding-bottom: 10px;
+  /*background: url(../images/bg_pattern1.png);*/
+  background: #917E4A;
+  color: #FFF;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+  font: 20px/20px 'Roboto', Arial, sans-serif;
+}
+.dc_contexto_reserva:hover {
+  /*color: #FFF;*/
+  padding-top: 15px;
+  font-size: 15px;
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+  cursor: move;
+}
+.dc_obj{  
+  padding-bottom: 20px;
+  border-top    : 1px solid #000;
+  border-right  : 1px solid #333;
+  border-bottom : 1px solid #444;
+  border-left   : 1px solid #333;
+  /*background    : url(../images/bg_pattern1.png) ;*/
+  border: 1px solid #261A0E!important;
+  border-bottom: 3px solid #261A0E!important;
+  background: #261A0E;
+  height: 30px;
+  border-radius: 10px;
+  color: #FFF;
+}
+.dc_contenedor{
+  width: 100%;
+  background    : url(../images/bg_pattern1.png) ;
+  height: 100px;
+  padding: 10px;
+}
+.dctexto_habitacion{
+  padding: 20px;
+  width: 60%;
+}
+#dc_abc{
+  padding-top: 30px
+}
+.txt_tile{
+  font-size: 20px;
+  text-transform: uppercase;
+}
+.dc-a {
+  padding: 15px;
+}
+.dc_b{
+  background    : url(../images/bg_pattern1.png) ;
+  padding-left: 30px;
+  padding-top: 10px;
+  padding-bottom: 1px;
+  padding-right: 20px;
+  position: relative;
+  width: 85%;
+  /*max-width: 300px;*/
+  border-radius: 10px;
+}
+.dc_title{
+  font-size: 3em;
+  padding-bottom: 10px
+}
+.dc_padin{
+  padding-top: 20px;
+}
+.dc_btn_reservar {
+  padding: 10px;
+  font-size: 18px;
+  border: 1px solid #907D49!important;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+.dc_btn_reservar:hover{
+  background: #907D49;
+  border: 1px solid #261A0E!important;
+}
+.rounded-list a{
+    position: relative;
+    display: block;
+    padding: .4em .4em .4em 2em;
+    *padding: .4em;
+    margin: .5em 0;
+    background: #ddd;
+    color: #261A0E;
+    /*text-decoration: none;*/
+    border-radius: .3em;
+    transition: all .3s ease-out;   
+}
+
+.rounded-list a:hover{
+    background: #eee;
+    color: red;
+}
+
+.rounded-list a:hover:before{
+    transform: rotate(360deg);  
+}
+
+.rounded-list a:before{
+    content: counter(li);
+    counter-increment: li;
+    position: absolute; 
+    left: -1.3em;
+    top: 50%;
+    margin-top: -1.3em;
+    background: #261A0E;
+    color: #FFF;
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    border: .3em solid #fff;
+    text-align: center;
+    /*font-weight: bold;*/
+    border-radius: 2em;
+    transition: all .3s ease-out;
+}
+
+ol {
+    counter-reset: li; /* Initiate a counter */
+    list-style: none; /* Remove default numbering */
+    *list-style: decimal; /* Keep using default numbering for IE6/7 */
+    font: 15px 'trebuchet MS', 'lucida sans';
+    padding: 0;
+    margin-bottom: 4em;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+}
+
+ol ol {
+    margin: 0 0 0 2em; /* Add some left margin for inner lists */
+}
+
+/*fin proceso mejoras del autor*/
+
+
 html,
 body {
   margin: 0;
@@ -40,7 +236,7 @@ h1 {
   position: relative;
   display: inline-block;
   margin: 0;
-  margin-top: 7px;
+  margin-top: 47px;
 }
 h1 img {
   max-width: inherit;
@@ -68,28 +264,24 @@ h4 {
   text-transform: uppercase;
 }
 /*========================================================
-										HEADER styles
+                    HEADER styles
 =========================================================*/
 #header {
   background: #fff;
   padding: 0;
   position: relative;
   z-index: 100;
-  background: #FFF;
+  background: url(../images/bg_pattern1.png) #2c2319;
   text-align: center;
   z-index: 110;
-
-}
-#dc_gual{
-  background: url(../images/bg_pattern1.png) #2c2319;
 }
 /* Main menu styles
 ========================================================*/
 /*========================================================
-										menu variables
+                    menu variables
 =========================================================*/
 nav {
-  margin-top: 42px;
+  margin-top: 20px;
   padding: 0;
   border-top: 1px solid #453524;
   border-bottom: 1px solid #453524;
@@ -161,8 +353,8 @@ nav {
   width: 0;
   height: 0;
   /*border-style: solid;
-				border-width: 3px 3px 0 3px;
-				border-color: #333 transparent transparent transparent;*/
+        border-width: 3px 3px 0 3px;
+        border-color: #333 transparent transparent transparent;*/
 }
 .sf-menu > li > a strong {
   position: absolute;
@@ -183,19 +375,19 @@ nav {
   opacity: 0;
   /* css triangle =============================================*/
   /*&:before {
-					content: "";
-					display: block;
-					width: 0; 
-					height: 0; 
-					border-left: 7px solid transparent;
-					border-right: 7px solid transparent;
-					border-bottom: 7px solid #fa9183; 
-					position: absolute;
-					top: -5px;
-					left: 50%;
-					margin-left: -3px;
+          content: "";
+          display: block;
+          width: 0; 
+          height: 0; 
+          border-left: 7px solid transparent;
+          border-right: 7px solid transparent;
+          border-bottom: 7px solid #fa9183; 
+          position: absolute;
+          top: -5px;
+          left: 50%;
+          margin-left: -3px;
 
-				}*/
+        }*/
 }
 .sf-menu > li.current > a {
   color: #1d150d;
@@ -257,7 +449,7 @@ nav {
   background: #917e4a;
 }
 .sf-menu ul li a.sf-with-ul:after {
-  /*content: '';*/
+  /*content: 'ï„‡';*/
   font-family: 'FontAwesome';
   position: absolute;
   width: 5px;
@@ -346,12 +538,6 @@ nav {
   /*height: 100px;*/
   display: none;
 }
-.isStuck .dc_contexto_reserva{
-  display: none;
-}
-.isStuck .dc_btn_reserva{
-  display: none;
-}
 .isStuck nav {
   margin-top: 0;
 }
@@ -365,7 +551,7 @@ nav {
   }
 }
 /*========================================================
-										USEFUL styles
+                    USEFUL styles
 =========================================================*/
 a {
   text-decoration: none;
@@ -633,7 +819,7 @@ blockquote p {
   display: block;
 }
 /*========================================================
-										LISTS
+                    LISTS
 =========================================================*/
 .listWithMarker {
   margin: 0;
@@ -665,7 +851,7 @@ blockquote p {
   color: #ffffff;
 }
 /*========================================================
-										BUTTONS
+                    BUTTONS
 =========================================================*/
 .more_btn {
   display: inline-block;
@@ -675,44 +861,6 @@ blockquote p {
   color: #917e4a;
   text-transform: uppercase;
   letter-spacing: 3px;
-}
-.dc_btn_reserva{
-  padding-top: 20px;
-  padding-bottom: 10px;
-  background: url(../images/bg_pattern1.png);
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-  -webkit-transition: 0.3s all ease;
-  transition: 0.3s all ease;
-}
-.dc_btn_reserva:hover{
-  padding-top: 50px;
-  padding-bottom: 10px;
-  background: url(../images/bg_pattern1.png);
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-  cursor: pointer;
-  font-size: 16px;
-  -webkit-transition: 0.3s all ease;
-  transition: 0.3s all ease;
-  /*color: #FFF;*/
-}
-.dc_contexto_reserva{
-  padding-top: 20px;
-  padding-bottom: 10px;
-  /*background: url(../images/bg_pattern1.png);*/
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-  -webkit-transition: 0.3s all ease;
-  transition: 0.3s all ease;
-}
-.dc_contexto_reserva:hover {
-  /*color: #FFF;*/
-  padding-top: 50px;
-  font-size: 15px;
-  -webkit-transition: 0.3s all ease;
-  transition: 0.3s all ease;
-  cursor: move;
 }
 .more_btn:hover {
   color: #fff;
@@ -819,7 +967,7 @@ a.magnifier2 .zoom {
 }
 /*----------- end social icons ----------------*/
 /*========================================================
-										CONTENT styles
+                    CONTENT styles
 =========================================================*/
 #content {
   padding: 0 0 30px 0;
@@ -831,7 +979,7 @@ a.magnifier2 .zoom {
 }
 .box-1 {
   color: #fff;
-  background: url('../images/bg1.jpg') 0 0;
+  background: url(../images/bg1.jpg) 0 0;
   text-align: center;
   padding: 8px 0 70px 0;
   min-height: 456px;
@@ -851,7 +999,7 @@ a.magnifier2 .zoom {
   background: url(../images/bg_pattern2.jpg) #2f2315;
   width: 1200px;
   margin: 0 auto;
-  margin-top: -295px;
+  margin-top: -220px;
   border-radius: 6px;
   border-top: 5px solid #817248;
   overflow: hidden;
@@ -986,7 +1134,7 @@ a.magnifier2 .zoom {
 }
 .slider_txt1 {
   position: relative;
-  font: 30px 'Roboto Slab', Arial, sans-serif;
+  font: 36px/42px 'Roboto Slab', Arial, sans-serif;
   color: #fff;
   margin-top: 10px;
   letter-spacing: 1px;
@@ -1089,7 +1237,7 @@ a.magnifier2 .zoom {
 }
 /**** end address section ****/
 /*========================================================
-										FOOTER styles
+                    FOOTER styles
 =========================================================*/
 #footer {
   padding: 18px 0 30px;
@@ -1111,7 +1259,7 @@ a.magnifier2 .zoom {
   letter-spacing: 3px;
 }
 /*========================================================
-										Widget styles
+                    Widget styles
 =========================================================*/
 /* UItoTop styles
 ========================================================*/
@@ -1142,7 +1290,7 @@ a.magnifier2 .zoom {
   }
 }
 /*========================================================
-								RESPONSIVE LAYOUTS STYLES 
+                RESPONSIVE LAYOUTS STYLES 
 =========================================================*/
 @media only screen and (max-width: 1199px) {
   figure a,
@@ -1226,6 +1374,18 @@ a.magnifier2 .zoom {
   }
   h1 img {
     width: 100%;
+  }
+  .dc_b{
+    width: 150px;
+  }
+  .box_skitter_large{    
+    width: 220px!important;
+  }
+  .box_skitter_large{
+    height: 140px!important;
+  }
+  .dc_contenedor{
+    width: 80%
   }
 }
 /*Core variables and mixins*/

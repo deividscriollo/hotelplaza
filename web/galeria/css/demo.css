@@ -1,0 +1,32 @@
+@charset "UTF-8";
+h1 {
+    font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, sans-serif;
+}
+a {
+    color: orange;
+}
+a:hover {
+    /*color: lightblue;*/
+    text-decoration: none;
+}
+.modal {
+	overflow: auto;
+	color: #333;
+}
+.dc_btn {
+  padding: 10px;
+  font-size: 18px;
+  border: 1px solid #907D49!important;
+  border-radius: 5px;
+  text-transform: uppercase;
+  background: #261A0E;
+  color: #907D49;
+}
+.dc_btn:hover{
+  background: #907D49;
+  border: 1px solid #261A0E!important;
+  color: #261A0E;
+}
+body{
+	background: #261A0E;
+}
