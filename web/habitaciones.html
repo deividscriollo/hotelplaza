@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="es" >
+<head>
+  	<meta charset="utf-8"/>	
+	<link rel="shortcut icon" href="img/logotipo.png" />
+	<meta name="description" content="Hotel Plaza Victoria Ibarra-Ecuador"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="David C, deividscriollo@gmail.com">
+	
+	<title>Bienvenido, Hotel Plaza Victoria Ibarra-Ecuador</title>
+	<style type="text/css" media="all">
+	/*controlador de scroll*/
+		@import url("css/scrolltop.css");
+	/*efectos en slider*/
+		@import url("css/colorbox_default_style.css");
+	/*redes sociales*/
+		@import url("css/follow.css");
+	/*css menu*/
+		@import url("css/superfish.css");
+	/*configuracion de todo el sitio*/
+	/*inicio configuracion tab*/
+		@import url("css/quicktabs.css");
+		@import url("css/boilerplate.css");
+		@import url("css/style_+_tab.css");
+		@import url("css/jquery.steps.css");
+	/*fin configuracion tab*/
+	</style>
+
+	<!-- jquery 1.4.4 -->
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script src="http://code.jquery.com/jquery-1.9.0.js"></script>
+	<!-- botones de slider -->
+		<script type="text/javascript" src="js/jquery.once.js"></script>
+	<!-- controla eventualidad de animacion slider -->
+		<script type="text/javascript" src="js/drupal.js"></script>
+	<!-- controla animacion efecto scroll arriba -->
+		<script type="text/javascript" src="js/scroll_to_top.js"></script>
+
+	<!-- configuracion de menu -->
+		<script type="text/javascript" src="js/superfish.js"></script>
+		<script type="text/javascript" src="js/supersubs.js"></script>
+
+	<!-- controla la eventualidad del slider -->
+		<script type="text/javascript" src="js/jquery.cycle.all.min.js"></script>
+		<script type="text/javascript" src="js/views_jqfx_cycle.js"></script>
+
+	<!-- configuracion personalida -->
+		<script type="text/javascript" src="js/dconfig.js"></script>
+		<script type="text/javascript" src="js/jquery.steps.min.js"></script>
+
+</head>
+<body id="body" class="html not-front not-logged-in no-sidebars page-rooms with-navigation with-subnav section-rooms" >    
+<div id="page-wrapper">
+	<div id="page">
+		<div id="page-wrapper-inner">		
+			<header id="header" role="banner" class="clearfix">
+				<div class="section-1 clearfix">
+					<a href="index.html" title="Inicio" id="logo">
+					<img src="img/logo.png" alt="Inicio" />
+					</a>
+				</div>
+				<div class="section-2 clearfix">
+					<div class="region region-menu">
+					    <div id="block-superfish-1" class="block block-superfish block-even">      
+							<div class="content">
+								<ul id="superfish-1" class="sf-menu main-menu sf-horizontal sf-style-default sf-total-items-5 sf-parent-items-1 sf-single-items-4">
+									<li id="menu-201-1" class="first odd sf-item-1 sf-depth-1 sf-no-children">	<a href="index.html" class="sf-depth-1">Inicio</a>
+									</li>
+									<li id="menu-1584-1" class="middle even sf-item-2 sf-depth-1 sf-no-children">
+										<a href="" class="sf-depth-1 ">sobre nosotros</a>
+									</li>
+									<li id="menu-1585-1" class="middle odd sf-item-3 sf-depth-1 sf-no-children">
+										<a href="habitaciones.html"  class="sf-depth-1 menuparent active">Habitaciones</a>
+									</li>
+									<li id="menu-739-1" class="middle even sf-item-4 sf-depth-1 sf-total-children-3 sf-parent-children-0 sf-single-children-3 menuparent">
+										<a href="" class="sf-depth-1  menuparent">Galería</a>
+										<ul>											
+											<li id="menu-1404-1" class="middle even sf-item-2 sf-depth-2 sf-no-children">
+												<a href="" class="sf-depth-2 ">Imagenes</a>
+											</li>
+											<li id="menu-1405-1" class="last odd sf-item-3 sf-depth-2 sf-no-children">
+												<a href="" class="sf-depth-2 ">Videos</a>
+											</li>
+										</ul>
+									</li>
+									<li id="menu-668-1" class="last odd sf-item-5 sf-depth-1 sf-no-children">
+										<a href="" class="sf-depth-1 ">Contactos</a>
+									</li>
+									<li id="menu-668-1" class="last odd sf-item-5 sf-depth-1 sf-no-children">
+										<a href="" class="sf-depth-1 ">Reservación</a>
+									</li>
+								</ul>
+							</div><!-- /.content -->
+						</div><!-- /.block -->
+  					</div>
+				</div>			
+			</header><!-- /#header -->	 
+			<div id="main-wrapper">
+				<div id="main" class="clearfix">
+					<div id="content" class="column" role="main">
+						<div class="section">	
+						    <div class="region region-content">
+								<div id="block-quicktabs-default-tabs" class="-block -block-quicktabs -block-even">
+									<div class="content">
+								   	 	<div class="item-list">
+								   	 		<ul class="quicktabs-tabs quicktabs-style-basic">
+								   	 			<li class="active first" id="obj_tab1">
+								   	 				<div>Habitación Individual</div>	   
+								   	 			</li>
+												<li id="obj_tab2">
+													<div>Habitación Doble</div>
+												</li>
+												<li id="obj_tab3">
+													<div >Habitación Triple</div>
+												</li>
+												<li id="obj_tab4">
+													<div >Habitación Suite</div>
+												</li>
+												<li id="obj_tab5">
+													<div> Habitación Familiar</div>
+												</li>
+											</ul>
+										</div>										
+										<div id="quicktabs-container-default_tabs" class="quicktabs_main quicktabs-style-basic">
+											<div  id="tabs1" class="quicktabs-tabpage">
+												<div class="view view-tab-family-suite view-id-tab_family_suite view-display-id-default view-dom-id-ef443ea5b9b200d8605c269e9bc1c5e0">
+										        	<div class="view-content">
+										        		<div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+															<div class="views-field views-field-field-tabs-images">
+																<div class="field-content">
+																	<img src="http://livedemo00.template-help.com/drupal_38357/sites/default/files/styles/quicktabs_images/public/bigstock_Modern_Interior__1399805%282%29.jpg" alt="" />
+																</div>
+															</div>  
+														    <div class="views-field views-field-title">
+														        <span class="field-content">
+														        	<a href="/drupal_38357/?q=node/94">
+														        		Vestibulum Ante Ipsum Primis
+														        	</a>
+														        </span>
+														    </div>
+														    <div class="views-field views-field-body">
+														    	<div class="field-content">
+														    		<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto</p>	
+														    		<ul class="list-1">
+														    			<li>
+														    				<a href="#">40-45m<sup>2</sup></a>
+														    			</li>
+																		<li>
+																			<a href="#">Balcony or terrace</a>
+																		</li>
+																		<li>
+																			<a href="#">Large bathroom with bathtub or shower</a>
+																		</li>
+																		<li>
+																			<a href="#">Separate WC</a>
+																		</li>
+																		<li>
+																			<a href="#">Room safe</a>
+																		</li>
+																		<li>
+																			<a href="#">One bedroom</a>
+																		</li>
+																		<li>
+																			<a href="#">Large living area</a>
+																		</li>
+																		<li>
+																			<a href="#">32" flatscreen TV, telephone, Wi-Fi</a>
+																		</li>
+																	</ul>
+																</div>
+															</div>
+															<div class="views-field views-field-view-node"> 
+																<span class="field-content more-link">
+																	<a href="/drupal_38357/?q=node/94">
+																		RESERVE NOW!
+																	</a>
+																</span>
+															</div>
+														</div>
+										    		</div>
+										    	</div>
+										    </div>
+										    <div  id="tabs2" class="quicktabs-tabpage quicktabs-hide">
+										    	<div class="view view-tab-luxury-suite view-id-tab_luxury_suite view-display-id-default view-dom-id-31b2f09ae3280a0c343a369b40dc93ad">
+										    		<div class="view-content">
+											        	<div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+											        		<div class="views-field views-field-field-tabs1-images">
+											        		    <div class="field-content">
+											        		    	<img src="http://livedemo00.template-help.com/drupal_38357/sites/default/files/styles/quicktabs_images/public/bigstock_Modern_Interior_1190942.jpg" alt="" />
+											        		    </div>
+											        	    </div>
+											        	    <div class="views-field views-field-title">
+											        	        <span class="field-content">
+											        	        	<a href="/drupal_38357/?q=node/96">
+											        	        		Donec fringilla metus in leo gravida facilisis.
+											        	        	</a>
+											        	        </span>
+											        	    </div>  
+											        	    <div class="views-field views-field-body">
+											        	        <div class="field-content">
+											        	        	<p>Phasellus id mi at quam ultricies iaculis quis mollis lorem. Sed ut libero a tortor laoreet ultrices non eget tortor. Vivamus ipsum nisi, tristique et scelerisque vitae, tincidunt commodo diam.</p>
+											        	        	<ul class="list-1">
+											        	        		<li>
+											        	        			<a href="#">60-75m<sup>2</sup></a>
+											        	        		</li>
+																		<li>
+																			<a href="#">Balcony and terrace</a>
+																		</li>
+																		<li>
+																			<a href="#">Large bathroom with bathtub and shower</a>
+																		</li>
+																		<li>
+																			<a href="#">Separate WC</a>
+																		</li>
+																		<li>
+																			<a href="#">Room safe</a>
+																		</li>
+																		<li>
+																			<a href="#">Two bedrooms</a>
+																		</li>
+																		<li>
+																			<a href="#">Large living area</a>
+																		</li>
+																		<li>
+																			<a href="#">32" flatscreen TV, telephone, Wi-Fi</a>
+																		</li>
+																	</ul>
+																</div>
+															</div>  
+											  				<div class="views-field views-field-view-node">
+											  					<span class="field-content more-link">
+											  						<a href="/drupal_38357/?q=node/96">RESERVE NOW!</a>
+											  					</span>
+											  				</div>
+											  			</div>
+											  		</div>
+											  	</div>
+											</div>
+											<div  id="tabs3" class="quicktabs-tabpage quicktabs-hide">
+												<div class="view view-tab-double-room view-id-tab_double_room view-display-id-default view-dom-id-16d17ee429f0893bdf328b33acc189f0">
+													<div class="view-content">
+													    <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+													    	<div class="views-field views-field-field-tabs2-images">
+													    		<div class="field-content">
+													    			<img src="http://livedemo00.template-help.com/drupal_38357/sites/default/files/styles/quicktabs_images/public/bigstock_modern_design_of_interior_Bed_12408044_0.jpg" alt="" />
+													    		</div>
+													    	</div>  
+													    	<div class="views-field views-field-title">
+													    		<span class="field-content">
+													    			<a href="/drupal_38357/?q=node/97">
+													    				Nulla ultricies enim aliquet augue eleifend iaculis.
+													    			</a>
+													    		</span>
+													    	</div>  
+													    	<div class="views-field views-field-body">
+													    		<div class="field-content">
+													    			<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus ut risus quis eros tincidunt adipiscing vel quis augue. Vivamus in magna turpis.</p>
+														    		<ul class="list-1"><li><a href="#">35-40m<sup>2</sup></a></li>
+																		<li>
+																			<a href="#">Balcony</a>
+																		</li>
+																		<li>
+																			<a href="#">Large bathroom with bathtub</a>
+																		</li>
+																		<li>
+																			<a href="#">Separate WC</a>
+																		</li>
+																		<li>
+																			<a href="#">Room safe</a>
+																		</li>
+																		<li>
+																			<a href="#">One bedroom</a>
+																		</li>
+																		<li>
+																			<a href="#">Large living area</a>
+																		</li>
+																		<li>
+																			<a href="#">32" flatscreen TV, telephone, Wi-Fi</a>
+																		</li>
+																	</ul>
+																</div>
+															</div>
+															<div class="views-field views-field-view-node">
+																<span class="field-content more-link">
+																	<a href="/drupal_38357/?q=node/97">RESERVE NOW!</a>
+																</span>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div  id="tabs4" class="quicktabs-tabpage quicktabs-hide">
+												<div class="view view-tab-single-room view-id-tab_single_room view-display-id-default view-dom-id-45302f07cb963c0788a34e5b47872b52">
+													<div class="view-content">
+													    <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+													    	<div class="views-field views-field-field-tabs3-images">
+													    		<div class="field-content">
+													    			<img src="http://livedemo00.template-help.com/drupal_38357/sites/default/files/styles/quicktabs_images/public/bigstock_Interior_Design_Modern_White_F_5082427.jpg" alt="" />
+													    		</div>
+													    	</div>
+													    	<div class="views-field views-field-title">
+													    		<span class="field-content">
+													    			<a href="/drupal_38357/?q=node/98">
+													    				Suspendisse quis ante non augue tincidunt ornare.
+													    			</a>
+													    		</span>
+													    	</div>  
+													    	<div class="views-field views-field-body">
+													    		<div class="field-content">
+													    			<p>In dictum turpis sit amet libero blandit molestie. Sed sodales tempus imperdiet. Morbi vitae tincidunt lectus. In hac habitasse platea dictumst. Mauris erat non ipsum venenatis rhoncus orci.</p>
+													    			<ul class="list-1"><li><a href="#">30-35m<sup>2</sup></a></li>
+																		<li>
+																			<a href="#">Shower</a>
+																		</li>
+																		<li>
+																			<a href="#">Separate WC</a>
+																		</li>
+																		<li>
+																			<a href="#">Room safe</a>
+																		</li>
+																		<li>
+																			<a href="#">One bedroom</a>
+																		</li>
+																		<li>
+																			<a href="#">32" flatscreen TV, telephone, Wi-Fi</a>
+																		</li>
+																	</ul>
+																</div>
+															</div>  
+															<div class="views-field views-field-view-node">
+														    	<span class="field-content more-link">
+														    		<a href="/drupal_38357/?q=node/98">RESERVE NOW!</a>
+														    	</span>
+														    </div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div  id="tabs5" class="quicktabs-tabpage quicktabs-hide">
+												<div class="view view-tab-single-room view-id-tab_single_room view-display-id-default view-dom-id-45302f07cb963c0788a34e5b47872b52">
+													<div class="view-content">
+													    <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+													    	<div class="views-field views-field-field-tabs3-images">
+													    		<div class="field-content">
+													    			<img src="http://livedemo00.template-help.com/drupal_38357/sites/default/files/styles/quicktabs_images/public/bigstock_Interior_Design_Modern_White_F_5082427.jpg" alt="" />
+													    		</div>
+													    	</div>
+													    	<div class="views-field views-field-title">
+													    		<span class="field-content">
+													    			<a href="/drupal_38357/?q=node/98">
+													    				Suspendismundot ornare.
+													    			</a>
+													    		</span>
+													    	</div>  
+													    	<div class="views-field views-field-body">
+													    		<div class="field-content">
+													    			<p>In dictum turpis sit amet libero blandit molestie. Sed sodales tempus imperdiet. Morbi vitae tincidunt lectus. In hac habitasse platea dictumst. Mauris erat non ipsum venenatis rhoncus orci.</p>
+													    			<ul class="list-1"><li><a href="#">30-35m<sup>2</sup></a></li>
+																		<li>
+																			<a href="#">Shower</a>
+																		</li>
+																		<li>
+																			<a href="#">Separate WC</a>
+																		</li>
+																		<li>
+																			<a href="#">Room safe</a>
+																		</li>
+																		<li>
+																			<a href="#">One bedroom</a>
+																		</li>
+																		<li>
+																			<a href="#">32" flatscreen TV, telephone, Wi-Fi</a>
+																		</li>
+																	</ul>
+																</div>
+															</div>  
+															<div class="views-field views-field-view-node">
+														    	<span class="field-content more-link">
+														    		<a href="/drupal_38357/?q=node/98">RESERVE NOW!</a>
+														    	</span>
+														    </div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div><!-- /.content -->
+								</div><!-- /.block -->
+							</div>
+						</div><!-- /.section -->
+					</div><!-- /#content -->
+				</div><!-- /#main -->
+			</div><!-- /#main-wrapper -->
+		</div><!-- /page-wrapper-inner --> 
+		<div id="content-bottom-c">
+			<div id="content-bottom-t">
+				<div id="content-bottom-b">
+			        <div class="region region-content-bottom">
+			            <div id="block-block-6" class="block block-block block-odd">
+			            	<div class="content">
+							    <div class="wrapper">
+									<div class="rooms-col1">
+										<h2>Wi-Fi</h2>
+										<p>		<strong class="text-1">NEW!</strong> All our rooms now offer free wireless internet. The perfect way to check your emails while on holiday!
+										</p>
+									</div>
+									<div class="rooms-col2">
+										<h2>Flatscreen TV</h2>
+										<p>		Many of our rooms are equipped with <strong class="text-1">flatscreen TVs</strong>, most with screen sizes between 27" and 32".
+										</p>
+									</div>
+									<div class="rooms-col3">
+										<h2>Keycard</h2>
+										<p>		<strong class="text-1">Keys are a thing of the past!</strong> All guests at our hotel are provided with keycards to open and lock their rooms.
+										</p>
+									</div>
+								</div>
+							</div><!-- /.content -->
+						</div><!-- /.block -->
+					</div>
+				</div>
+			</div>
+		</div>	
+		<footer id="footer" role="contentinfo">
+			<div class="footer-wrapper clearfix">
+				<div class="region region-footer">
+    				<div id="block-block-5" class="block block-block block-odd">
+    					<div class="content">
+    						Hotel Plaza Victoria &copy; 2015  
+    						<a href="?q=node/79">Política de Privacidad</a> 
+    					</div><!-- /.content -->
+    				</div><!-- /.block -->
+    				<div id="block-follow-site" class="block block-follow block-even">
+	    				<div class="content">
+	    				    <div class="follow-links clearfix">
+	    				    	<a href="http://twitter.com/" class="follow-link follow-link-twitter follow-link-site" title="Follow Hotel Palace on Twitter">
+	    				    		Twitter
+	    				    	</a>
+								<a href="http://facebook.com/" class="follow-link follow-link-facebook follow-link-site" title="Follow Hotel Palace on Facebook">	
+									Facebook
+								</a>
+								<a href="http://plus.google.com/" class="follow-link follow-link-gplus follow-link-site" title="Follow Hotel Palace on Google Plus">
+									Google Plus
+								</a>
+							</div>
+						</div><!-- /.content -->
+					</div><!-- /.block -->
+				</div>
+				<!--{%FOOTER_LINK} -->
+			</div><!-- /#footer-wrapper -->
+		</footer><!-- /#footer -->
+	</div><!-- /#page -->
+</div><!-- /#page-wrapper -->
+
+</body>
+</html>
