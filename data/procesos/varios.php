@@ -12,14 +12,14 @@
 	}else{
 		if($_GET['fun'] == "2"){//para paises
 			if($_GET['tipo'] == "0"){//indica que se carga al inicio de la pagina
-				$sql = "select id,nombre_pais from pais";
+				$sql = "select id,nombre_pais from pais";				
 				cargarSelect($sql,$_GET['tam']);
 			}else{				
 			}
 		}else{
 			if($_GET['fun'] == "3"){//para provincias
 				if($_GET['tipo'] == "0"){//indica que se carga al inicio de la pagina
-					$sql = "select id,nombre_provincia from provincia where id_pais = '$_GET[id]'";
+					$sql = "select id,nombre_provincia from provincia where id_pais = '$_GET[id]'";					
 					cargarSelect($sql,$_GET['tam']);
 				}else{
 

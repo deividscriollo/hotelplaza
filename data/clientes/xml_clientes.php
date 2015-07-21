@@ -25,15 +25,15 @@ $start = $limit * $page - $limit;
 if ($start < 0)
     $start = 0;
 if ($search == 'false') {
-    $SQL = "select usuario.id,id_hotel,nombre_usuario,tipo_identificacion,identificacion,telefono,celular,email,usuario,estado,fecha,id_ciudad,id_cargo,nombre_cargo,extranjero,imagen,direccion,clave,estado from usuario,cargo,clave where usuario.id_cargo = cargo.id and usuario.id = clave.id_usuario ORDER BY  $sidx $sord limit $limit offset $start";
+    $SQL = "select cliente.id,nombre_cliente,apellido_cliente,tipo_identificacion,identificacion,direccion,telefono,celular,email,id_ciudad,img,fecha_creacion from cliente,clave_cliente where cliente.id = clave_cliente.id_cliente ORDER BY  $sidx $sord limit $limit offset $start";
 } else {
     $campo = $_GET['searchField'];
   
     if ($_GET['searchOper'] == 'eq') {
-        $SQL = "select usuario.id,id_hotel,nombre_usuario,tipo_identificacion,identificacion,telefono,celular,email,usuario,estado,fecha,id_ciudad,id_cargo,nombre_cargo,extranjero,imagen,direccion,clave,estado from usuario,cargo,clave where usuario.id_cargo = cargo.id and usuario.id = clave.id_usuario and $campo = '$_GET[searchString]' ORDER BY $sidx $sord limit $limit offset $start";
+        $SQL = "select cliente.id,nombre_cliente,apellido_cliente,tipo_identificacion,identificacion,direccion,telefono,celular,email,id_ciudad,img,fecha_creacion from cliente,clave_cliente where cliente.id = clave_cliente.id_cliente and $campo = '$_GET[searchString]' ORDER BY $sidx $sord limit $limit offset $start";
     }         
     if ($_GET['searchOper'] == 'cn') {
-        $SQL = "select usuario.id,id_hotel,nombre_usuario,tipo_identificacion,identificacion,telefono,celular,email,usuario,estado,fecha,id_ciudad,id_cargo,nombre_cargo,extranjero,imagen,direccion,clave,estado from usuario,cargo,clave where usuario.id_cargo = cargo.id and usuario.id = clave.id_usuario and $campo like '%$_GET[searchString]%' ORDER BY $sidx $sord limit $limit offset $start";
+        $SQL = "select cliente.id,nombre_cliente,apellido_cliente,tipo_identificacion,identificacion,direccion,telefono,celular,email,id_ciudad,img,fecha_creacion from cliente,clave_cliente where cliente.id = clave_cliente.id_cliente and $campo like '%$_GET[searchString]%' ORDER BY $sidx $sord limit $limit offset $start";
     }
   
 }
@@ -58,15 +58,7 @@ $s .= "<records>" . $count . "</records>";
     $s .= "<cell>" . $row[8] . "</cell>";
     $s .= "<cell>" . $row[9] . "</cell>";
     $s .= "<cell>" . $row[10] . "</cell>";
-    $s .= "<cell>" . $row[11] . "</cell>";
-    $s .= "<cell>" . $row[12] . "</cell>";
-    $s .= "<cell>" . $row[13] . "</cell>";
-    $s .= "<cell>" . $row[14] . "</cell>";
-    $s .= "<cell>" . $row[15] . "</cell>";
-    $s .= "<cell>" . $row[16] . "</cell>";
-    $s .= "<cell>" . $row[17] . "</cell>";
-    $s .= "<cell>" . $row[18] . "</cell>";
-    
+    $s .= "<cell>" . $row[11] . "</cell>";        
     $s .= "</row>";
 }
 $s .= "</rows>";

@@ -27,8 +27,8 @@ function comprobarCamposRequired(form){
     var correcto=true;
     var campos_text=$('#'+form+' input:required');    
     $(campos_text).each(function() {
-        var pattern = new RegExp("^" + $(this)[0].pattern + "$");        
-        if($(this).val() != '' && pattern.test($(this).val())){            
+        var pattern = new RegExp("^" + $(this)[0].pattern + "$");                   
+        if($(this).val() != '' && pattern.test($(this).val())){   
             $(this).parent().parent().removeClass('has-error');                        
         }else{
             correcto=false;
@@ -73,12 +73,12 @@ function limpiar_form(e){
     }
 }
 
-function carga_ubicaciones(pais,provincia,ciudad){
+function carga_ubicaciones(pais,provincia,ciudad){        
     $.ajax({        
         type: "POST",
         dataType: 'json',        
         url: "../procesos/varios.php?tipo=0&id=0&fun=2&tam=2",        
-        success: function(response) {         
+        success: function(response) {                         
             for (var i = 0; i < response.length; i=i+2) {               
                 $("#"+pais).append("<option value ="+response[i]+">"+response[i+1]+"</option>");                                                                                                                                            
             }   
@@ -286,6 +286,7 @@ function ci(campo,extranjero){
 }
 
 function ci_ruc_pass(campo,valor,documento){
+
     var numero = valor;
     var suma = 0;      
     var residuo = 0;      
@@ -361,7 +362,7 @@ function ci_ruc_pass(campo,valor,documento){
     residuo = suma % modulo;                                         
     var digitoVerificador = residuo==0 ? 0: modulo - residuo; 
     ////////////verificamos del tipo cedula o ruc////////////////////
-    if (documento == "Cedula") {
+    if (documento == "CI") {
         if (numero.length === 10) {
             if(nat == true){
                 if (digitoVerificador != d10){                          
