@@ -1,0 +1,55 @@
+/*
+Back to top button 
+*/
+#back-top {
+	position: fixed;
+	bottom: 10px;
+	margin-left: 20px;
+	z-index:499;
+	/*IE6 hack */
+		 _position: absolute;
+		 _top:expression(documentElement.scrollTop+body.scrollTop);
+		 _margin-top: 500px;
+
+}
+#back-top #link {display:none;}
+#back-top a {
+	width: 50px;
+	display: block;
+	text-align: center;
+	font: 11px/100% Arial, Helvetica, sans-serif;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #172639;
+	/* background color transition */
+	-webkit-transition: 1s;
+	-moz-transition: 1s;
+	transition: 1s;
+	
+}
+#back-top a:hover {
+	color: #ffc170;
+}
+/* arrow icon (span tag) */
+#back-top span#button {
+	width: 50px;
+	height: 50px;
+	display: block;
+	margin-bottom: 7px;
+	background: #172639 url(../img/app/up-arrow.png) no-repeat center center;
+	opacity:0.8;
+	/* rounded corners */
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	/* background color transition */
+	-webkit-transition: 1s;
+	-moz-transition: 1s;
+	transition: 1s;
+}
+/*proceso cambio*/
+
+#back-top{right:40px;}
+#back-top span#button{background-color:#084e3b;}
+#back-top span#button:hover{opacity:1;background-color:#deb914;}
+span#link{display :none;}

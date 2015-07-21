@@ -13,6 +13,8 @@
 		$check = "ON";	
 	$cadena = " ".$_POST['img'];	
 	$buscar = 'data:image/png;base64,';		
+	$ciudad = isset($_POST['txt_11']);
+	echo $ciudad;
 	if($_POST['tipo'] == "g"){
 		$repetidos = repetidos("usuario",strtoupper($_POST["txt_13"]),"usuario","g","","");	
 		if( $repetidos == 'true'){

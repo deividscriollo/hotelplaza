@@ -787,30 +787,23 @@ function guardar(){///funcion para guardar datos
 		$("#form_usuario").on("submit",function (e){				
 			var texto=($("#btn_0").text()).trim();															
 			var valores = $("#form_usuario").serialize();
-			if(texto=="Guardar"){ 
-				if($("#txt_11").val() != null){
-					if($("#txt_5").val() == $("#txt_6").val()){
-						guardar_datos(valores,"g",e);		
-					}else{
-						alert("Repita la contraseña correctamente");	
-						$("#txt_6").val("");
-						$("#txt_6").focus();
-					}						
+			if(texto=="Guardar"){ 				
+				if($("#txt_5").val() == $("#txt_6").val()){
+					guardar_datos(valores,"g",e);		
 				}else{
-					alert("Indique una ciudad antes de continuar");
-				}     					                	
-	        }else{
-	            if($("#txt_11").val() != null){
-					if($("#txt_5").val() == $("#txt_6").val()){
-						guardar_datos(valores,"m",e);		
-					}else{
-						alert("Repita la contraseña correctamente");	
-						$("#txt_6").val("");
-						$("#txt_6").focus();
-					}						
+					alert("Repita la contraseña correctamente");	
+					$("#txt_6").val("");
+					$("#txt_6").focus();
+				}														
+	        }else{	            
+				if($("#txt_5").val() == $("#txt_6").val()){
+					guardar_datos(valores,"m",e);		
 				}else{
-					alert("Indique una ciudad antes de continuar");
-				}     		 					                	
+					alert("Repita la contraseña correctamente");	
+					$("#txt_6").val("");
+					$("#txt_6").focus();
+				}						
+				
 	        }	
 	        e.preventDefault();
     		$(this).unbind("submit")		    			            			
