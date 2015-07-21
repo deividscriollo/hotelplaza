@@ -177,7 +177,7 @@ function inicio (){
 	    jQuery(grid_selector).jqGrid({	        
 	        datatype: "xml",
 	        url: 'xml_clientes.php',        
-	        colNames: ['ID','NOMBRES','APELLIDOS','TIPO','DOCUMENTO','DIRECCIÓN','TELÉFONO','CELULAR','E-MAIL','id_ciudad','imagen','FECHA','clave'],
+	        colNames: ['ID','NOMBRES','APELLIDOS','TIPO','DOCUMENTO','DIRECCIÓN','TELÉFONO','CELULAR','E-MAIL','id_ciudad','imagen','Fecha','clave'],
 	        colModel:[      
 	            {name:'txt_o',index:'txt_o',frozen:true,align:'left',search:false},	            
 	            {name:'txt_3',index:'nombre_cliente',frozen : true,align:'left',search:true},
@@ -188,9 +188,10 @@ function inicio (){
 	            {name:'txt_6',index:'txt_6',frozen : true,align:'left',search:false},
 	            {name:'txt_7',index:'txt_7',frozen : true,align:'left',search:false},            
 	            {name:'txt_8',index:'txt_8',frozen : true,align:'left',search:true},	            
-	            {name:'txt_11',index:'id_ciudad',frozen : true,align:'left',search:false},	            	            
-	            {name:'txt_5',index:'txt_5',frozen : true,align:'left',search:false},
-	            {name:'estado',index:'estado',frozen : true,align:'left',search:false},	            	            
+	            {name:'txt_11',index:'id_ciudad',frozen : true,align:'left',search:false},	            	            	            
+	            {name:'img',index:'img',frozen : true,align:'left',search:false},	            	            
+	            {name:'fecha_creacion',index:'fecha_creacion',frozen : true,align:'left',search:false},	            	            
+	            {name:'txt_12',index:'clave',frozen : true,align:'left',search:false},	            	            
 	        ],          
 	        rowNum: 10,       
 	        width:600,
@@ -198,9 +199,9 @@ function inicio (){
 	        height:200,
 	        rowList: [10,20,30],
 	        pager: pager_selector,        
-	        sortname: 'usuario.id',
+	        sortname: 'cliente.id',
 	        sortorder: 'asc',
-	        caption: 'LISTA DE USUARIOS',	        
+	        caption: 'LISTA DE CLIENTES',	        
 	        
 	        altRows: true,
 	        multiselect: false,
@@ -230,12 +231,7 @@ function inicio (){
 	            $("#txt_7").val(ret.txt_7);
 	            $("#txt_8").val(ret.txt_8);	            
 	            $("#txt_12").val(ret.txt_12);
-	            $("#txt_13").val(ret.txt_13);	            
-	            if(ret.extranjero == "ON"){
-	            	$("#form-field-checkbox").prop("checked",true);
-	            }else{
-	            	$("#form-field-checkbox").prop("checked",false);
-	            }
+	            $("#txt_13").val(ret.txt_13);	            	           
 	            $("#avatar").attr("src","img/"+ret.imagen);	
 	            /**/
 	            var prov = 0;

@@ -25,15 +25,15 @@ $start = $limit * $page - $limit;
 if ($start < 0)
     $start = 0;
 if ($search == 'false') {
-    $SQL = "select cliente.id,nombre_cliente,apellido_cliente,tipo_identificacion,identificacion,direccion,telefono,celular,email,id_ciudad,img,fecha_creacion from cliente,clave_cliente where cliente.id = clave_cliente.id_cliente ORDER BY  $sidx $sord limit $limit offset $start";
+    $SQL = "select cliente.id,nombre_cliente,apellido_cliente,tipo_identificacion,identificacion,direccion,telefono,celular,email,id_ciudad,img,fecha_creacion,clave_cliente from cliente,clave_cliente where cliente.id = clave_cliente.id_cliente ORDER BY  $sidx $sord limit $limit offset $start";
 } else {
     $campo = $_GET['searchField'];
   
     if ($_GET['searchOper'] == 'eq') {
-        $SQL = "select cliente.id,nombre_cliente,apellido_cliente,tipo_identificacion,identificacion,direccion,telefono,celular,email,id_ciudad,img,fecha_creacion from cliente,clave_cliente where cliente.id = clave_cliente.id_cliente and $campo = '$_GET[searchString]' ORDER BY $sidx $sord limit $limit offset $start";
+        $SQL = "select cliente.id,nombre_cliente,apellido_cliente,tipo_identificacion,identificacion,direccion,telefono,celular,email,id_ciudad,img,fecha_creacion,clave_cliente from cliente,clave_cliente where cliente.id = clave_cliente.id_cliente and $campo = '$_GET[searchString]' ORDER BY $sidx $sord limit $limit offset $start";
     }         
     if ($_GET['searchOper'] == 'cn') {
-        $SQL = "select cliente.id,nombre_cliente,apellido_cliente,tipo_identificacion,identificacion,direccion,telefono,celular,email,id_ciudad,img,fecha_creacion from cliente,clave_cliente where cliente.id = clave_cliente.id_cliente and $campo like '%$_GET[searchString]%' ORDER BY $sidx $sord limit $limit offset $start";
+        $SQL = "select cliente.id,nombre_cliente,apellido_cliente,tipo_identificacion,identificacion,direccion,telefono,celular,email,id_ciudad,img,fecha_creacion,clave_cliente from cliente,clave_cliente where cliente.id = clave_cliente.id_cliente and $campo like '%$_GET[searchString]%' ORDER BY $sidx $sord limit $limit offset $start";
     }
   
 }
@@ -59,6 +59,8 @@ $s .= "<records>" . $count . "</records>";
     $s .= "<cell>" . $row[9] . "</cell>";
     $s .= "<cell>" . $row[10] . "</cell>";
     $s .= "<cell>" . $row[11] . "</cell>";        
+    $s .= "<cell>" . $row[12] . "</cell>";  
+
     $s .= "</row>";
 }
 $s .= "</rows>";
