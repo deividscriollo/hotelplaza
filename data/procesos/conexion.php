@@ -2,6 +2,10 @@
     class MySQL{        
         private $conexion; private $total_consultas;
         public function MySQL(){ 
+            //$host = "localhost";
+            //$usuario = "root";
+            //$pass = "root";
+            //$db = "hotel_plaza";
             $host = "localhost";
             $usuario = "root";
             $pass = "root";
