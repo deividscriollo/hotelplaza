@@ -161,29 +161,29 @@ function inicio (){
 	$("#btn_0").on("click",guardar);	
 	$("#btn_1").on("click",limpiar_form);
 	$("#btn_2").on("click",actualizar_form);	
-	$("#btn_4").on("click",function (){		
+	$("#btn_4").on("click",function (){				
 		var resp = "";		
-		resp =atras($("#txt_o").val(),"usuarios","secuencia.php");		
-		console.log(resp)  
+		resp =atras($("#txt_o").val(),"usuarios","secuencia.php");				
+		console.log(resp)
 		if(resp[0] != false){
 			$("#txt_o").val(resp[0][0]);
 			$("#txt_1").val(resp[0][4]);
 			$("#txt_2").val(resp[0][2]);
 			$("#txt_3").val(resp[0][5]);
 			$("#txt_7").val(resp[0][6]);		
-			$("#txt_12").val(resp[0][17]);
+			$("#txt_12").val(resp[0][16]);
 			$("#txt_8").val(resp[0][7]);
 			$("#txt_13").val(resp[0][8]);		
 			
-			$("#avatar").attr("src","img/"+resp[0][16]);	
+			$("#avatar").attr("src","img/"+resp[0][15]);	
 
-			if(resp[0][15] == "ON"){
+			if(resp[0][14] == "ON"){
 		    	$("#form-field-checkbox").prop("checked",true);
 		    }else{
 		    	$("#form-field-checkbox").prop("checked",false);
 		    }	    
-		    $("#txt_5").val(resp[0][18]);
-		    $("#txt_6").val(resp[0][18]);
+		    $("#txt_5").val(resp[0][17]);
+		    $("#txt_6").val(resp[0][17]);
 		    $("#txt_4").val(resp[0][12]);
 		    $("#txt_4").trigger("chosen:updated");		    
 		    /**/
@@ -193,8 +193,7 @@ function inicio (){
 		        type: "POST",		        
 		        url: "../procesos/varios.php?tipo=0&id="+resp[0][11]+"&fun=5",        
 		        success: function(response) {       		        
-		        	prov = response;
-		        	console.log(prov);
+		        	prov = response;		        	
 		        	$.ajax({/*obtnengo el id del pais*/
 				        type: "POST",			        
 				        url: "../procesos/varios.php?tipo=0&id="+prov+"&fun=6",        
@@ -267,27 +266,27 @@ function inicio (){
 	});
 	$("#btn_5").on("click",function (){		
 		var resp = "";		
-		resp =adelante($("#txt_o").val(),"usuarios","secuencia.php");		
+		resp =adelante($("#txt_o").val(),"usuarios","secuencia.php");				
 		if(resp[0] != false){
 			$("#txt_o").val(resp[0][0]);
 			$("#txt_1").val(resp[0][4]);
 			$("#txt_2").val(resp[0][2]);
 			$("#txt_3").val(resp[0][5]);
 			$("#txt_7").val(resp[0][6]);		
-			$("#txt_12").val(resp[0][17]);
+			$("#txt_12").val(resp[0][16]);
 			$("#txt_8").val(resp[0][7]);
 			$("#txt_13").val(resp[0][8]);		
 			
-			$("#avatar").attr("src","img/"+resp[0][16]);	
+			$("#avatar").attr("src","img/"+resp[0][15]);	
 
-			if(resp[0][15] == "ON"){
+			if(resp[0][14] == "ON"){
 		    	$("#form-field-checkbox").prop("checked",true);
 		    }else{
 		    	$("#form-field-checkbox").prop("checked",false);
 		    }	    
-		    $("#txt_5").val(resp[0][18]);
-		    $("#txt_6").val(resp[0][18]);
-		    $("#txt_4").val(resp[0][13]);
+		    $("#txt_5").val(resp[0][17]);
+		    $("#txt_6").val(resp[0][17]);
+		    $("#txt_4").val(resp[0][12]);
 		    $("#txt_4").trigger("chosen:updated");		    
 		    /**/
 	        var prov = 0;
@@ -296,8 +295,7 @@ function inicio (){
 		        type: "POST",		        
 		        url: "../procesos/varios.php?tipo=0&id="+resp[0][11]+"&fun=5",        
 		        success: function(response) {         
-		        	prov = response;
-		        	console.log(prov);
+		        	prov = response;		        	
 		        	$.ajax({/*obtnengo el id del pais*/
 				        type: "POST",			        
 				        url: "../procesos/varios.php?tipo=0&id="+prov+"&fun=6",        
@@ -441,8 +439,7 @@ function inicio (){
 	        },
 	        ondblClickRow: function(rowid) {     	            	            
 	            var gsr = jQuery(grid_selector).jqGrid('getGridParam','selrow');                                              
-            	var ret = jQuery(grid_selector).jqGrid('getRowData',gsr);       
-            	console.log(ret);	            
+            	var ret = jQuery(grid_selector).jqGrid('getRowData',gsr);                   	
 	            $("#txt_o").val(ret.txt_o);
 	            $("#txt_1").val(ret.txt_1);
 	            $("#txt_2").val(ret.txt_2);

@@ -49,6 +49,15 @@
 								
 							}
 						}else{
+							if($_GET['fun'] == "7"){//para datos hotel
+								if($_GET['tipo'] == "0"){//indica que se carga al inicio de la pagina
+									$sql = "select id,nombre_hotel,direccion,telefono,imagen,celular,web,estado,fecha,id_ciudad from hotel";															
+									cargarSelect($sql,$_GET['tam']);
+								}else{
+									
+								}
+							}else{
+							}
 						}
 					}
 				}

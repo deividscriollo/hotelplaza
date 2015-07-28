@@ -55,11 +55,7 @@
 		<script src="../dist/js/html5shiv.min.js"></script>
 		<script src="../dist/js/respond.min.js"></script>
 		<![endif]-->
-		<style type="text/css">
-		.ui-widget {
-			z-index: 99999999999999999 !important;
-		}
-		</style>
+				
 	</head>
 
 	<body class="no-skin">
@@ -88,7 +84,7 @@
 							<li>
 								<a href="#">Administración</a>
 							</li>
-							<li class="active">Usuarios</li>
+							<li class="active">Datos Hotel</li>
 						</ul><!-- /.breadcrumb -->
 
 						<div class="nav-search" id="nav-search">
@@ -106,7 +102,7 @@
 							<div class="col-xs-12 col-sm-12 widget-container-col">
 								<div class="widget-box">
 									<div class="widget-header">
-										<h5 class="widget-title"><i class="ace-icon fa fa-user"></i> Usuarios</h5>
+										<h5 class="widget-title"><i class="ace-icon fa fa-user"></i> Hotel</h5>
 
 										<div class="widget-toolbar">
 											<a href="#" data-action="fullscreen" class="orange2">
@@ -122,7 +118,7 @@
 									<div class="widget-body">
 										<div class="widget-main">
 											<div class="row">
-												<form class="form-horizontal" role="form" rol="form" action="" method="POST" id="form_usuario">												
+												<form class="form-horizontal" role="form" rol="form" action="" method="POST" id="form_hotel">												
 													<div class="row">
 														<div class="col-xs-12">
 															<div class="col-xs-2">
@@ -130,98 +126,58 @@
 																	<div class="col-xs-12">
 																		<div class="col-xs-12">																									
 																			<span class="profile-picture">
-																				<img id="avatar" name="avatar" class="editable img-responsive" alt="Imagen Usuario" src="img/default.png" accept="image/*"/>
+																				<img id="avatar" name="avatar" class="editable img-responsive" alt="Hotel x" src="img/default.png" accept="image/*"/>
 																			</span>
-																		</div>																																														
+																		</div>
 																	</div>
 																</div>
-															</div>
-
+															</div>															
 															<div class="col-sm-5">
 																<div class="form-group has-error">
-																	<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> C.I.:</label>
+																	<label class="col-sm-3 control-label no-padding-right" for="txt_1"> NOMBRE HOTEL: </label>
 																	<div class="col-sm-9">
-																		<input type="text" id="txt_1" name="txt_1"  placeholder="Identificación" class="col-xs-10 col-sm-5" data-toggle="tooltip" data-original-title="Agregue el nro de CI en caso de ser extranjero seleccione la casilla Extranjero" required pattern="[0-9]{1,}" maxlength="10" />
-																		<input type="hidden" id="txt_o" name="txt_o" />
-																		<span class="help-inline col-xs-12 col-sm-7">																			
-																			<div class="checkbox">
-																				<label class="block">
-																					<input name="form-field-checkbox" id="form-field-checkbox" type="checkbox" class="ace input-lg" />
-																					<span class="lbl bigger-120"> Extranjero</span>
-																				</label>
-																			</div>
-																		</span>
-
+																		<input type="text" id="txt_1" name="txt_1" placeholder="Nombres Completo" class="form-control" required pattern="[A-Za-záéíóúÁÉÍÓÚñÑ0-9 ]{1,}" data-toggle="tooltip" data-original-title="Nombres completos"  />
 																	</div>
 																</div>
-
 																<div class="form-group has-error">
-																	<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Nombres: </label>
+																	<label class="col-sm-3 control-label no-padding-right" for="txt_2"> Dirección: </label>
 																	<div class="col-sm-9">
-																		<input type="text" id="txt_2" name="txt_2" placeholder="Nombres Completo" class="form-control" required pattern="[A-Za-záéíóúÁÉÍÓÚñÑ0-9 ]{1,}" data-toggle="tooltip" data-original-title="Nombres completos"  />
+																		<input type="text" id="txt_2" name="txt_2" placeholder="Dirección" class="form-control"  required pattern="[A-Za-záéíóúÁÉÍÓÚñÑ0-9]{1,}" data-toggle="tooltip" data-original-title="Ingrese la dirección del cliente a crear" />
 																	</div>
-																</div>																								
+																</div>
+																<div class="form-group has-error">
+																	<label class="col-sm-3 control-label no-padding-right" for="txt_3"> Correo: </label>
+																	<div class="col-sm-9">																	  
+																	  	<input type="email" id="txt_3" name="txt_3" placeholder="Correo" class="form-control" required pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"  data-toggle="tooltip" data-original-title="Cuenta de Correo Electrónico" />
+																	</div>
+																</div>			
 																<div class="form-group">
-																	<label class="col-xs-12 col-sm-3 control-label no-padding-right" for="txt_3"> Teléfono: </label>
-																	<div class="col-xs-12 col-sm-9">
-																		<span class="block input-icon input-icon-right">
-	                                                                    	<input type="text" id="txt_3"  name="txt_3" placeholder="Teléfono" class="form-control " onkeydown="return validarNumeros(event)" />
-	                                                                    	<i class="ace-icon fa fa-phone fa-flip-horizontal"></i>
-	                                                                    </span>																		
+																	<label class="col-sm-3 control-label no-padding-right" for="txt_6"> Página Web: </label>
+																	<div class="col-sm-9">									
+																		<input type="text" id="txt_6" name="txt_6" placeholder="Página Web" class="form-control"  data-toggle="tooltip" data-original-title="Cuenta de Correo Electrónico" />
 																	</div>
-																</div>
-
-																<div class="form-group has-error">
-																	<label class="col-sm-3 control-label no-padding-right" for="txt_13"> Usuario: </label>
-																	<div class="col-sm-9">
-																		<input type="text" id="txt_13" name="txt_13" placeholder="Nombre de usuario" class="form-control" required pattern="[A-Za-záéíóúÁÉÍÓÚñÑ0-9]{1,}" data-toggle="tooltip" data-original-title="Nombres de usuario"  />
-																	</div>
-																</div>	
-
-																<div class="form-group has-error">
-																	<label class="col-sm-3 control-label no-padding-right" for="txt_5"> Password: </label>
-																	<div class="col-sm-9">
-																		<input type="password" id="txt_5" name="txt_5" placeholder="Password" class="form-control" required pattern="[A-Za-záéíóúÁÉÍÓÚñÑ0-9]{6,}" data-toggle="tooltip" data-original-title="Digite la contraseña del usuario mínimo 5 carácteres"/>
-																	</div>
-																</div>
-
-																<div class="form-group">
-																	<label class="col-sm-3 control-label no-padding-right" for="txt_6"> Repetir: </label>
-																	<div class="col-sm-9">
-																		<input type="password" id="txt_6" name="txt_6" placeholder="Repetir Password" class="form-control" data-toggle="tooltip" data-original-title="Repita la contraseña ingresada"/>
-																	</div>
-																</div>
+																</div>																
 															</div>
 
 															<div class="col-sm-5">
 																<div class="form-group">
-																	<label class="col-sm-3 control-label no-padding-right" for="txt_7"> Celular: </label>																	
+																	<label class="col-sm-3 control-label no-padding-right" for="txt_4"> Teléfono: </label>
 																	<div class="col-sm-9">	
 																		<span class="block input-icon input-icon-right">
-																			<input type="text" id="txt_7" name="txt_7" placeholder="Celular" class="form-control" onkeydown="return validarNumeros(event)" />
+																			<input type="text" id="txt_4" name="txt_4" placeholder="Teléfono" class="form-control" onkeydown="return validarNumeros(event)" />
 																			<i class="ace-icon fa fa-mobile fa-flip-horizontal"></i>					
-																		</span>																																																						
+																		</span>
 																	</div>
 																</div>
-
 																<div class="form-group">
-																	<label class="col-sm-3 control-label no-padding-right" for="txt_8"> Correo: </label>
-																	<div class="col-sm-9">
-																	  <span class="block input-icon input-icon-right">
-																	  	<input type="mail" id="txt_8" name="txt_8" placeholder="Correo" class="form-control" />
-																	  	<i class="ace-icon fa fa-envelope"></i>
-																	  </span>
+																	<label class="col-sm-3 control-label no-padding-right" for="txt_5"> Celular: </label>
+																	<div class="col-sm-9">	
+																		<span class="block input-icon input-icon-right">
+																			<input type="text" id="txt_5" name="txt_5" placeholder="Celular" class="form-control" onkeydown="return validarNumeros(event)" />
+																			<i class="ace-icon fa fa-mobile fa-flip-horizontal"></i>					
+																		</span>
 																	</div>
 																</div>
-
-																<div class="form-group">
-																	<label class="col-sm-3 control-label no-padding-right" for="txt_4"> Cargo: </label>
-																	<div class="col-sm-9">																		
-																		<select class="chosen-select form-control" id="txt_4" name="txt_4" data-placeholder="">
-																		</select>																			
-																	</div>
-																</div>	
-
 																<div class="form-group">
 																	<label class="col-sm-3 control-label no-padding-right" for="txt_9"> País: </label>
 																	<div class="col-sm-9">
@@ -246,12 +202,7 @@
 																	</div>
 																</div>
 
-																<div class="form-group has-error">
-																	<label class="col-sm-3 control-label no-padding-right" for="txt_12"> Dirección: </label>
-																	<div class="col-sm-9">
-																		<input type="text" id="txt_12" name="txt_12" placeholder="Dirección" class="form-control"  required pattern="[A-Za-záéíóúÁÉÍÓÚñÑ0-9]{1,}" data-toggle="tooltip" data-original-title="Ingrese la dirección del usuario a crear" />
-																	</div>
-																</div>
+																
 															</div>
 														</div>
 													</div>
@@ -270,18 +221,6 @@
 															<i class="ace-icon fa fa-refresh bigger-120 write"></i>
 															Actualizar
 														</button>														
-														<button data-toggle="modal" href="#myModal" type="button" id="btn_3" class="btn btn-primary">
-															<i class="ace-icon fa fa-search bigger-120 write"></i>
-															Buscar
-														</button>
-														<button type="button" id="btn_4" class="btn btn-primary">
-															<i class="ace-icon fa fa-arrow-circle-left bigger-120 write"></i>
-															Atras
-														</button>
-														<button type="button" id="btn_5" class="btn btn-primary">
-															<i class="ace-icon fa fa fa-arrow-circle-right bigger-120 write"></i>
-															Adelante
-														</button>
 													</div>
 												</form>
 											</div>
@@ -365,7 +304,7 @@
 		<script src="../dist/js/jquery.jqGrid.min.js"></script>	
 		<!-- inline scripts related to this page -->		
 		<!--systems scrips -->
-		<script src="usuarios.js"></script>		
+		<script src="hotel.js"></script>		
 		<script src="../procesos/funciones_generales.js"></script>		
 		
 		<!-- -->
