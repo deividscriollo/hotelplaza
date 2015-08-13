@@ -136,6 +136,7 @@
 																<div class="form-group has-error">
 																	<label class="col-sm-3 control-label no-padding-right" for="txt_1"> NOMBRE HOTEL: </label>
 																	<div class="col-sm-9">
+																		<input type="hidden" id="txt_0" name="txt_0">
 																		<input type="text" id="txt_1" name="txt_1" placeholder="Nombres Completo" class="form-control" required pattern="[A-Za-záéíóúÁÉÍÓÚñÑ0-9 ]{1,}" data-toggle="tooltip" data-original-title="Nombres completos"  />
 																	</div>
 																</div>

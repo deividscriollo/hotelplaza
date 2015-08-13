@@ -51,7 +51,7 @@
 						}else{
 							if($_GET['fun'] == "7"){//para datos hotel
 								if($_GET['tipo'] == "0"){//indica que se carga al inicio de la pagina
-									$sql = "select id,nombre_hotel,direccion,telefono,imagen,celular,web,estado,fecha,id_ciudad from hotel";															
+									$sql = "select hotel.id,nombre_hotel,direccion,telefono,imagen,celular,web,estado,fecha,id_ciudad,correo,provincia.id,pais.id from hotel,provincia,pais,ciudad where hotel.id_ciudad = ciudad.id and ciudad.id_provincia = provincia.id and provincia.id_pais = pais.id";															
 									cargarSelect($sql,$_GET['tam']);
 								}else{
 									

@@ -183,10 +183,52 @@ function cargar_hotel(){
 	$.ajax({        
         type: "POST",
         dataType: 'json',        
-        url: "../procesos/varios.php?tipo=0&fun=7&tam=10",        
-        success: function(response) {         			        	        	
-            $("#txt_1").val(response[0][0])
-            
+        url: "../procesos/varios.php?tipo=0&fun=7&tam=13",        
+        success: function(response) {         			        	        	        	
+            $("#txt_0").val(response[0]);
+            $("#txt_1").val(response[1]);
+            $("#txt_2").val(response[2]);
+            $("#txt_4").val(response[3]);
+            $("#txt_5").val(response[5]);
+            $("#txt_6").val(response[6]);
+            $("#txt_3").val(response[10]);
+            $("#txt_9").val(response[12]);
+            $("#txt_9").trigger("chosen:updated"); 
+            $.ajax({        
+		        type: "POST",
+		        dataType: 'json',        
+		        url: "../procesos/varios.php?tipo=0&id="+response[12]+"&fun=3&tam=2",        
+		        success: function(data) {         			        	
+		        	$("#txt_10").html("");
+		            for (var i = 0; i < data.length; i=i+2) {            				            	
+		            	if(data[i] == response[11]){
+							$("#txt_10").append("<option value ="+data[i]+" selected>"+data[i+1]+"</option>");            																																
+		            	}
+						else{
+							$("#txt_10").append("<option value ="+data[i]+">"+data[i+1]+"</option>");            																																
+						}
+		            }   
+		            $("#txt_10").trigger("chosen:updated"); 
+		            $.ajax({        
+				        type: "POST",
+				        dataType: 'json',        
+				        url: "../procesos/varios.php?tipo=0&id="+response[11]+"&fun=4&tam=2",        
+				        success: function(data) {         			        	
+				        	$("#txt_11").html("");
+				            for (var i = 0; i < data.length; i=i+2) {            				            	
+				            	if(data[i] == response[0][11]){
+									$("#txt_11").append("<option value ="+data[i]+" selected>"+data[i+1]+"</option>");            																																
+				            	}
+								else{
+									$("#txt_11").append("<option value ="+data[i]+">"+data[i+1]+"</option>");            																																
+								}
+				            }   
+				            $("#txt_11").trigger("chosen:updated");			
+				            comprobarCamposRequired("form_hotel");	    							                                         
+				        }
+				    });	      		                                         
+		        }
+		    });/**/		                                        
         }
     });	   
 }

@@ -164,7 +164,7 @@ function inicio (){
 	$("#btn_4").on("click",function (){				
 		var resp = "";		
 		resp =atras($("#txt_o").val(),"usuarios","secuencia.php");				
-		console.log(resp)
+		//console.log(resp)
 		if(resp[0] != false){
 			$("#txt_o").val(resp[0][0]);
 			$("#txt_1").val(resp[0][4]);
@@ -195,7 +195,7 @@ function inicio (){
 		        success: function(response) {       		        
 		        	prov = response;		        	
 		        	$.ajax({/*obtnengo el id del pais*/
-				        type: "POST",			        
+				        type: "POST",
 				        url: "../procesos/varios.php?tipo=0&id="+prov+"&fun=6",        
 				        success: function(response) {         
 				        	pais = response;						        	
@@ -298,7 +298,7 @@ function inicio (){
 		        	prov = response;		        	
 		        	$.ajax({/*obtnengo el id del pais*/
 				        type: "POST",			        
-				        url: "../procesos/varios.php?tipo=0&id="+prov+"&fun=6",        
+				        url: "../procesos/varios.php?tipo=0&id="+prov+"&fun=6",        				        
 				        success: function(response) {         
 				        	pais = response;						        	
 				        	/*cambio los combos*/
